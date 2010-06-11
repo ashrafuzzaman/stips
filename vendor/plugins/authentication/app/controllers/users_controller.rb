@@ -37,9 +37,9 @@ class UsersController < ApplicationController
           # set this user as the recipient of inquiry notifications
           if (notification_recipients = InquirySetting.find_or_create_by_name("Notification Recipients")).present?
             notification_recipients.update_attributes({
-              :value => current_user.email,
-              :destroyable => false
-            })
+                :value => current_user.email,
+                :destroyable => false
+              })
           end
         end
 
@@ -91,7 +91,7 @@ class UsersController < ApplicationController
     end
   end
 
-protected
+  protected
 
   def redirect?
     if logged_in?
@@ -102,7 +102,8 @@ protected
   end
 
   def can_create_public_user?
-    User.count == 0
+    #User.count == 0
+    true
   end
   alias_method :can_create_public_user, :can_create_public_user?
 

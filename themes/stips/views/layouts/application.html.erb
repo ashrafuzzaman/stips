@@ -12,7 +12,7 @@ Released   : 20100418
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
   <%= render :partial => "/shared/head", :locals => {:theme => true} %>
-  
+
   <body>
     <div id="wrapper">
       <div id="header">
@@ -73,6 +73,11 @@ Released   : 20100418
                 <li>
                   <h2>Navigation</h2>
                   <%= render :partial => 'shared/menu' %>
+                  <ul>
+                    <li class="last" id="item_2">
+                      <%= link_to "Register Here", new_user_path %>
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </div>
