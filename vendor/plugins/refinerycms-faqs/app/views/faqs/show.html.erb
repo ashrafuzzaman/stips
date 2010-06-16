@@ -1,0 +1,22 @@
+<% content_for :body_content_title do %>
+  <%= @faq.title %>
+<% end %>
+
+<% content_for :body_content_left do %>
+
+  <%= render :partial => "basic_show", :locals => {:faq => @faq} %>
+
+<% end %>
+
+<% content_for :body_content_right do %>
+  <h2>Other Faqs</h2>
+  <ul id="faqs">
+    <% @faqs.each do |faq| %>
+      <li>
+        <%= link_to faq.title, faq_url(faq) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

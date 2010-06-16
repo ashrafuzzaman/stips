@@ -1,0 +1,17 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(faq) -%>">
+  <span class='title'>
+    <%=h faq.title %>
+    <span class="preview">&nbsp;</span>
+
+    <span class='actions'>
+      <%= link_to refinery_icon_tag("application_go.png"), faq_url(faq),
+          :title => 'View this faq<br/><em>Opens in a new window</em>',
+          :target => "_blank" %>
+      <%= link_to refinery_icon_tag("application_edit.png"), edit_admin_faq_path(faq),
+           :title => 'Edit this faq' %>
+      <%= link_to refinery_icon_tag("delete.png"), admin_faq_path(faq),
+          :class => "cancel confirm-delete",
+          :title => 'Remove this faq forever' %>
+    </span>
+  </span>
+</li>

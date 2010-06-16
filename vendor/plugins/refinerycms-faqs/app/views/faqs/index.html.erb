@@ -1,0 +1,19 @@
+<% content_for :body_content_left do %>
+  <ul id="faqs">
+    <% @faqs.each do |faq| %>
+      <li>
+        <%= link_to faq.title, "##{faq.tag}" %>
+      </li>
+    <% end %>
+  </ul>
+
+  <% @faqs.each do |faq| %>
+    <div id="<%= faq.tag %>">
+      <%= render :partial => "basic_show", :locals => {:faq => faq} %>
+      <%= link_to "Back to top", "#body_content_page_title" %>
+    </div>
+  <% end %>
+
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

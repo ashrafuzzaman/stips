@@ -1,0 +1,20 @@
+<%= error_messages_for :faq -%>
+<% form_for [:admin, @faq] do |f| -%>
+  
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :description -%>
+    <%= f.text_area :description, :rows => 20, :cols => 140, :class => 'wymeditor' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :tag -%>
+    <%= f.text_field :tag -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions", :locals => {:f => f, :continue_editing => false} %>
+<% end -%>
