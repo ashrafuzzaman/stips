@@ -27,8 +27,6 @@ Mac OS 10.5 or 10.6 users [this shell install script](http://github.com/maddox/m
 
 #### Clone from GIT repository
 
-The git repository is where all of the changes are made when any new code is written or existing code is updated. For this reason it is often better to use the gem or to checkout a particular tag (the latest is usually considered the most stable). So unless you want to use the latest code, checkout the latest tag by replacing 0.9.X.XX below with the appropriate version:
-
     git clone http://github.com/ashrafuzzaman/stips stips
     cd ./stips
     # now create the database.yml in config folder
@@ -38,9 +36,6 @@ The git repository is where all of the changes are made when any new code is wri
 You'll need to install bundler if you don't have it already:
 
     gem install bundler
-
-You can do this by running:
-
     bundle install
 
 Next create your database and fill it with Stips's default data:
