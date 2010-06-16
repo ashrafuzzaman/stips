@@ -11,6 +11,7 @@ config/amazon_s3.yml
 config/rackspace_cloudfiles.yml
 nbproject
 index/**/*
+db/schema.rb
 db/*.sqlite3
 *.tmproj
 *.autobackupbyrefinery.*
