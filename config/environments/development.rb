@@ -1,3 +1,4 @@
+RMAGICK_BYPASS_VERSION_TEST = true
 # Settings specified here will take precedence over those in config/environment.rb
 config.reload_plugins = true
 
