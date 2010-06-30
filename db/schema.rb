@@ -1,4 +1,4 @@
-# This file is auto-generated from the current state of the database. Instead of editing this file,
+# This file is auto-generated from the current state of the database. Instead of editing this file, 
 # please use the migrations feature of Active Record to incrementally modify your database, and
 # then regenerate this schema definition.
 #
@@ -9,7 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100608062447) do
+ActiveRecord::Schema.define(:version => 20100629192741) do
+
+  create_table "faqs", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "tag"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "faqs", ["id"], :name => "index_faqs_on_id"
 
   create_table "images", :force => true do |t|
     t.integer  "parent_id"
@@ -80,6 +91,28 @@ ActiveRecord::Schema.define(:version => 20100608062447) do
   add_index "pages", ["id"], :name => "index_pages_on_id"
   add_index "pages", ["parent_id"], :name => "index_pages_on_parent_id"
 
+  create_table "poll_answers", :force => true do |t|
+    t.string   "title"
+    t.integer  "vote",       :default => 0
+    t.integer  "poll_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "poll_answers", ["id"], :name => "index_poll_answers_on_id"
+
+  create_table "polls", :force => true do |t|
+    t.string   "title"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "polls", ["id"], :name => "index_polls_on_id"
+
   create_table "refinery_settings", :force => true do |t|
     t.string   "name"
     t.text     "value"
@@ -134,5 +167,13 @@ ActiveRecord::Schema.define(:version => 20100608062447) do
   end
 
   add_index "users", ["id"], :name => "index_users_on_id"
+
+  create_table "users_polls", :id => false, :force => true do |t|
+    t.integer "user_id"
+    t.integer "poll_id"
+    t.integer "poll_answer_id"
+  end
+
+  add_index "users_polls", ["user_id", "poll_id"], :name => "index_users_polls_on_user_id_and_poll_id"
 
 end

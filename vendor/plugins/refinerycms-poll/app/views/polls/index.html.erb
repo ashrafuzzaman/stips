@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="polls">
+    <% @polls.each do |poll| %>
+      <li>
+        <%= link_to poll.title, poll_url(poll) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

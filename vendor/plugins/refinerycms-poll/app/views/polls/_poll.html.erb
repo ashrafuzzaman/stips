@@ -1,0 +1,17 @@
+
+<% if logged_in? %>
+  <% @poll = Poll.active_poll(current_user.id) %>
+  <% if !@poll.nil? %>
+    <h3>User Poll</h3>
+    <div style="margin-left: 10px;">
+      <%= error_messages_for :poll -%>
+      <% form_for :poll, :url => submit_poll_path(@poll) do |f| -%>
+        <div><%= @poll.title %></div>
+        <% @poll.poll_answers.each do |ans| %>
+          <%= radio_button_tag("poll_answer_id", ans.id) %> <%= ans.title %><br/>
+        <% end -%>
+        <%= f.submit 'Submit' %>
+      </div>
+    <% end -%>
+  <% end -%>
+<% end -%>
