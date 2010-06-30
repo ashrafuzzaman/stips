@@ -1,0 +1,39 @@
+<div id='actions'>
+  <ul>
+    <li>
+      <%= link_to "Create New Poll Answer", new_admin_poll_poll_answer_url(params[:poll_id]), :class => "add_icon" %>
+    </li>
+  <%# if !searching? and PollAnswer.count > 1 %>
+    <%#*<li>%>
+      <%#= link_to "Reorder Poll Answers", admin_poll_poll_answers_url(params[:poll_id]), :id => "reorder_action", :class => "reorder_icon" %>
+      <%#= link_to "Done Reordering Poll Answers", admin_poll_poll_answers_url(params[:poll_id]), :id => "reorder_action_done", :style => "display: none;", :class => "reorder_icon" %>
+    <%#*</li>%>
+  <%# end %>
+  </ul>
+</div>
+<div id='records'>
+  <% if searching? %>
+    <h2>Search Results for "<%= params[:search] %>"</h2>
+    <% if @poll_answers.any? %>
+      <%= render :partial => "poll_answer", :collection => @poll_answers %>
+    <% else %>
+      <p>Sorry, no results found.</p>
+    <% end %>
+  <% else %>
+    <% if @poll_answers.any? %>
+      <%= will_paginate @poll_answers, :previous_label => '&laquo;', :next_label => '&raquo;' %>
+       <ul id='sortable_list'>
+        <%= render :partial => "sortable_list" %>
+       </ul>
+      <%= will_paginate @poll_answers, :previous_label => '&laquo;', :next_label => '&raquo;' %>
+    <% else %>
+      <p>
+        <strong>
+          There are no poll answers yet.
+          Click "Create New Poll Answer" to add your first poll answer.
+        </strong>
+      </p>
+    <% end %>
+  <% end %>
+</div>
+<%= render :partial => "/shared/admin/make_sortable", :locals => {:tree => false } if !searching? and PollAnswer.count > 1 %>

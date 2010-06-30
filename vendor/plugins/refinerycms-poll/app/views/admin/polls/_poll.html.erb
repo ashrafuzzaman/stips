@@ -1,0 +1,20 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(poll) -%>">
+  <span class='title'>
+    <%=h poll.title %>
+    <span class="preview">&nbsp;</span>
+
+    <span class='actions'>
+      <%= link_to refinery_icon_tag("application_go.png"), poll_url(poll),
+        :title => 'View this poll<br/><em>Opens in a new window</em>',
+        :target => "_blank" %>
+      <%= link_to refinery_icon_tag("application_edit.png"), edit_admin_poll_path(poll),
+        :title => 'Edit this poll' %>
+      <%= link_to refinery_icon_tag("delete.png"), admin_poll_path(poll),
+        :class => "cancel confirm-delete",
+        :title => 'Remove this poll forever' %>
+      <%= link_to refinery_icon_tag("page_add.png"), admin_poll_poll_answers_url(poll.id),
+        :title => 'View answers for this poll' %>
+
+    </span>
+  </span>
+</li>
