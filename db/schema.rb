@@ -1,4 +1,4 @@
-# This file is auto-generated from the current state of the database. Instead of editing this file,
+# This file is auto-generated from the current state of the database. Instead of editing this file, 
 # please use the migrations feature of Active Record to incrementally modify your database, and
 # then regenerate this schema definition.
 #
@@ -9,7 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100608062447) do
+ActiveRecord::Schema.define(:version => 20100627003810) do
+
+  create_table "faqs", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "tag"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "faqs", ["id"], :name => "index_faqs_on_id"
 
   create_table "images", :force => true do |t|
     t.integer  "parent_id"
@@ -44,6 +55,16 @@ ActiveRecord::Schema.define(:version => 20100608062447) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "news_items", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "publish_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "news_items", ["id"], :name => "index_news_items_on_id"
 
   create_table "page_parts", :force => true do |t|
     t.integer  "page_id"
