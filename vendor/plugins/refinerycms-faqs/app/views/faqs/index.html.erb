@@ -7,13 +7,14 @@
     <% end %>
   </ul>
 
-  <% @faqs.each do |faq| %>
-    <div id="<%= faq.tag %>">
-      <%= render :partial => "basic_show", :locals => {:faq => faq} %>
-      <%= link_to "Back to top", "#body_content_page_title" %>
-    </div>
-  <% end %>
-
+  <div id="faq_answers">
+    <% @faqs.each do |faq| %>
+      <div id="<%= faq.tag %>">
+        <%= render :partial => "basic_show", :locals => {:faq => faq} %>
+        <%= link_to "Back to top", "#body_content_page_title" %>
+      </div>
+    <% end %>
+  </div>
 <% end %>
 
 <%= render :partial => "/shared/content_page" %>
