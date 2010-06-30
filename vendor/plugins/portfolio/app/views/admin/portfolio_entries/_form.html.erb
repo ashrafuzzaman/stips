@@ -1,0 +1,51 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'portfolio' %>
+  <%= javascript_include_tag 'portfolio' %>
+<% end %>
+
+<%= error_messages_for :portfolio_entry %>
+<% form_for [:admin, @portfolio_entry] do |f| %>
+  <div class='field'>
+    <%= f.required_label :title %>
+    <%= f.text_field :title, :class => "larger widest" %>
+  </div>
+  <div class='field images_field'>
+    <span class='clearfix label_inline_with_link'>
+      <%= label_tag('portfolio_entry_image_ids', 'Images') %>
+      <%= link_to "#{refinery_icon_tag "add.png"} Add",
+                  insert_admin_images_url(:dialog => true, :width => 950, :height => 510, :callback => "image_added"),
+                  :name => "Add Another Image",
+                  :id => "add_image_link" %>
+    </span>
+    <ul id='portfolio_images' class='clearfix portfolio_entry_images'>
+      <% @portfolio_entry.images.each do |image| %>
+        <li id='image_<%= image.id %>'>
+          <%= image_fu image, :grid %>
+          <%= hidden_field_tag 'portfolio_entry[image_ids][]', image.id,
+                               :id => "portfolio_entry_image_id_#{image.id}" %>
+        </li>
+      <% end %>
+      <li class='empty'>
+        <img id="current_portfolio_entry_image" src="" alt="" style='display: none' />
+        <input type='hidden' id='portfolio_entry_image_id' name='portfolio_entry[image_ids][]' />
+      </li>
+    </ul>
+  </div>
+  <div class='field clearfix'>
+    <%= f.label :body, 'Content' %>
+    <%= f.text_area :body, :class => "wymeditor widest", :rows => 7 %>
+  </div>
+  <% if @portfolio_entries_for_parents_list.any? %>
+    <div class='field'>
+      <%= f.label :parent_id %>
+      <%= f.collection_select :parent_id, @portfolio_entries_for_parents_list, :id, :indented_title, :include_blank => true %>
+    </div>
+  <% end %>
+
+  <%= render :partial => "/shared/admin/form_actions",
+             :locals => {
+               :f => f,
+               :continue_editing => true
+             } -%>
+
+<% end %>

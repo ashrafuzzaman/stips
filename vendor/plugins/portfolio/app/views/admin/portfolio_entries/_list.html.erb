@@ -1,0 +1,30 @@
+<%
+  branch = if list === @portfolio_entries.first
+    "branch_start"
+  elsif list === @portfolio_entries.last or (list.parent and list === list.parent.children.last)
+    "branch_end"
+  end
+-%>
+<li class='clearfix record<%= " #{branch}" %>' id="<%= dom_id(list) -%>">
+  <div class='clearfix'>
+    <span class='actions'>
+      <% url = (::Refinery::Portfolio.multi_level? && list.parent ? portfolio_project_url(list.parent, list) : portfolio_url(list))  %>
+      <%= link_to refinery_icon_tag('application_go.png'), url, :target => "_blank",
+                 :title => "View this entry live <br/><em>(opens in a new window)</em>" %>
+      <%= link_to refinery_icon_tag('application_edit.png'), edit_admin_portfolio_entry_path(list),
+                 :title => "Edit this entry" %>
+      <%= link_to refinery_icon_tag('arrow_up.png'),
+                 emancipate_admin_portfolio_entry_url(list),
+                 :title => "Move this entry up one level" if list.parent.present? %>
+      <%= link_to refinery_icon_tag('delete.png'), admin_portfolio_entry_path(list),
+                 :class => "cancel confirm-delete",
+                 :title => "Remove this entry forever" %>
+    </span>
+    <%=h list.title %>
+  </div>
+  <% if (children = list.children).any? %>
+    <ul<%= " class='nested'" %>>
+      <%= render :partial => 'list', :collection => children %>
+    </ul>
+  <% end %>
+</li>

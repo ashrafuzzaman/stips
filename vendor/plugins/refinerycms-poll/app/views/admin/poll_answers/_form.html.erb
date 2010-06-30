@@ -1,0 +1,10 @@
+<%= error_messages_for :poll_answer -%>
+<% form_for [:admin, @poll, @poll_answer] do |f| -%>
+  
+  <div class='field'>
+    <%= f.label :title -%>
+    <%= f.text_field :title, :class => 'larger' -%>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions", :locals => {:f => f, :continue_editing => false} %>
+<% end -%>

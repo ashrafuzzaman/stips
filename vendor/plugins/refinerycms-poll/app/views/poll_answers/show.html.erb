@@ -1,0 +1,35 @@
+<% content_for :body_content_title do %>
+  <%= @poll_answer.title %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  
+  <div>
+    <h3>Title</h3>
+    <%= @poll_answer.title %>
+  </div>
+  
+  <div>
+    <h3>Vote</h3>
+    <%= @poll_answer.vote %>
+  </div>
+  
+  <div>
+    <h3>Poll</h3>
+    <%= @poll_answer.poll.title %>
+  </div>
+  
+<% end %>
+
+<% content_for :body_content_right do %>
+  <h2>Other Poll Answers</h2>
+  <ul id="poll_answers">
+    <% @poll_answers.each do |poll_answer| %>
+      <li>
+        <%= link_to poll_answer.title, poll_answer_url(poll_answer) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

@@ -1,0 +1,39 @@
+#!/usr/bin/env ruby
+require 'pathname'
+require 'fileutils'
+
+portfolio_root = Pathname.new(File.expand_path(File.dirname(__FILE__) << "/.."))
+rails_root = if defined?(Rails.root)
+  Rails.root
+elsif defined?(RAILS_ROOT)
+  Pathname.new(RAILS_ROOT)
+else
+  Pathname.new(ARGV.first)
+end
+if rails_root.exist?
+  [%w(db migrate), %w(public stylesheets), %w(public javascripts)].each do |dir|
+    rails_root.join(dir.join(File::SEPARATOR)).mkpath
+  end
+
+  copies = [
+    {:from => %w(db migrate), :to => %w(db migrate), :filename => "20100616201947_create_polls.rb"},
+    {:from => %w(db migrate), :to => %w(db migrate), :filename => "20100616213852_create_poll_answers.rb"},
+    {:from => %w(db migrate), :to => %w(db migrate), :filename => "20100629192741_create_users_polls_join_table.rb"}
+  ]
+	copies.each do |copy|
+    copy_from = portfolio_root.join(copy[:from].join(File::SEPARATOR), copy[:filename])
+	  copy_to = rails_root.join(copy[:to].join(File::SEPARATOR), copy[:filename])
+    unless copy_to.exist?
+	    FileUtils::copy_file copy_from.to_s, copy_to.to_s
+    else
+      puts "'#{File.join copy[:to], copy[:filename]}' already existed in your application so your existing file was not overwritten."
+    end
+  end
+
+	puts "---------"
+	puts "Copied all refinerycms-poll files."
+	puts "Now, run rake db:migrate"
+	puts "Now put <%= render :partial => \"/polls/poll\" %> in the place where you want the poll to show up"
+else
+  puts "Please specify the path of the project that you want to use the poll with, i.e. refinerycms-poll-install /path/to/project"
+end

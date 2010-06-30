@@ -1,0 +1,16 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(poll_answer) -%>">
+  <span class='title'>
+    <%=h poll_answer.title %>
+    &nbsp;
+    Total vote <%=h poll_answer.vote %>
+    <span class="preview">&nbsp;</span>
+
+    <span class='actions'>
+      <%= link_to refinery_icon_tag("application_edit.png"), edit_admin_poll_poll_answer_url(:id => poll_answer.id, :poll_id => params[:poll_id]),
+           :title => 'Edit this poll answer' %>
+      <%= link_to refinery_icon_tag("delete.png"), admin_poll_poll_answer_url(:id => poll_answer.id, :poll_id => params[:poll_id]),
+          :class => "cancel confirm-delete",
+          :title => 'Remove this poll answer forever' %>
+    </span>
+  </span>
+</li>
