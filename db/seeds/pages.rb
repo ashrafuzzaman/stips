@@ -42,7 +42,7 @@ contact_us_page.parts.create({
             })
 contact_us_page.parts.create({
               :title => "Side Body",
-              :body => "<p>163 Evergreen Terrace<br/>Happyville<br/>USA.<br/>Phone: 1-800 CALLUSNOW</p>",
+              :body => "<p>Stockholm Institute For Public Speaking<br/>Sannadalsvägen 12<br/>11765 Stockholm<br/>Phone: 1-800 CALLUSNOW</p>",
               :position => 1
             })
 contact_us_page_position = -1

@@ -2,7 +2,8 @@
 cache("#{Refinery.base_cache_key}_#{RefinerySetting.find_or_set(:refinery_menu_cache_action_suffix, "site_menu")}_#{request.path}") do
   if (collection ||= @menu_pages).any?
 -%>
-      <ul>
+
+      <ul id="menu">
       <%= render :partial => "/shared/menu_branch",
                  :collection => collection,
                  :locals => {
@@ -11,6 +12,7 @@ cache("#{Refinery.base_cache_key}_#{RefinerySetting.find_or_set(:refinery_menu_c
                  }
       -%>
       </ul>
+
 <%
   end
 end

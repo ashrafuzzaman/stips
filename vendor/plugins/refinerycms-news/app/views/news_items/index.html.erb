@@ -14,5 +14,6 @@
     <p><em>Sorry we haven't posted up any news yet.</em></p>
   <% end %>
 <% end %>
-<% content_for :body_content_right, "&nbsp;" if @news_items.offset > 0 -%>
+<%# content_for :body_content_right, "&nbsp;" if @news_items.offset > 0 -%>
+    <% content_for :body_content_right, render(:partial => 'recent_posts') %>
 <%= render :partial => "/shared/content_page" %>

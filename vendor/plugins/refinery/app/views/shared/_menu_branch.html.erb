@@ -6,16 +6,17 @@
   <%= link_to menu_branch.title, menu_branch.url %>
 
   <% unless hide_children or
-            menu_branch.parent_id.present? or
+            #menu_branch.parent_id.present? or
             (children = menu_branch.children.reject{|c| !c.in_menu?}).empty? %>
-    <nav class='clearfix'>
+  <ul class="submenu" style="background: url('/theme/images/submenu.png') repeat-x scroll">
       <%=
         render :partial => "/shared/menu_branch",
                :collection => children,
                :locals => {
-                 :hide_children => hide_children,
+                 :hide_children => RefinerySetting.find_or_set(:menu_hide_children, false),
                  :sibling_count => children.size - 1
                } -%>
-    </nav>
+  </ul>
   <% end %>
+  
 </li>

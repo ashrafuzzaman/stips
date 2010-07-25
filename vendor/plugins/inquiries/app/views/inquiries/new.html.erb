@@ -5,26 +5,53 @@
     <% form_for @inquiry do |f| %>
       <%= f.error_messages :header_message => "Whoops there was a small problem",
                            :message => "The following problems need to be corrected:" %>
-      <div class='field'>
-        <%= f.required_label :name %>
-        <%= f.text_field :name %>
-      </div>
-      <div class='field'>
-        <%= f.required_label :email %>
-        <%= f.text_field :email %>
-      </div>
-      <div class='field'>
-        <%= f.label :phone %>
-        <%= f.text_field :phone %>
-      </div>
-      <div class='field message_field'>
-        <%= f.label :message  %>
-        <%= f.text_area :message, :rows => 8 %>
-      </div>
-      <div class='actions'>
-        <%= f.submit 'Send Message' %>
-        <%= link_to "We value your privacy", "/pages/privacy-policy", :id => "privacy_link" if RefinerySetting.find_or_set(:show_contact_privacy_link, false) %>
-      </div>
+
+    <table>
+      <tr>
+        <td class='field'><%= f.required_label :name %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td class='field'><%= f.required_label :email %></td>
+        <td><%= f.text_field :email %></td>
+      </tr>
+      <tr>
+        <td class='field'><%= f.label :phone %></td>
+        <td><%= f.text_field :phone %></td>
+      </tr>
+      <tr>
+        <td class='field message_field'><%= f.label :message  %></td>
+        <td><%= f.text_area :message, :rows => 8 %></td>
+      </tr>
+      <tr>
+        <td <class='actions'><%= f.submit 'Send Message' %></td>
+        <td><%= link_to "We value your privacy", "/pages/privacy-policy", :id => "privacy_link" if RefinerySetting.find_or_set(:show_contact_privacy_link, false) %></td>
+      </tr>
+
+    </table>
+    
+    
+    
+    <%#*<div class='field'>%>
+        <%#= f.required_label :name %>
+        <%#= f.text_field :name %>
+      <%#*</div>%>
+      <%#*<div class='field'>%>
+        <%#= f.required_label :email %>
+        <%#= f.text_field :email %>
+      <%#*</div>%>
+      <%#*<div class='field'>%>
+        <%#= f.label :phone %>
+        <%#= f.text_field :phone %>
+      <%#*</div>%>
+      <%#*<div class='field message_field'>%>
+        <%#= f.label :message  %>
+        <%#= f.text_area :message, :rows => 8 %>
+      <%#*</div>%>
+      <%#*<div <class='actions'>%>
+        <%#= f.submit 'Send Message' %>
+        <%#= link_to "We value your privacy", "/pages/privacy-policy", :id => "privacy_link" if RefinerySetting.find_or_set(:show_contact_privacy_link, false) %>
+      <%#*</div>%>
     <% end %>
   </div>
 <% end %>

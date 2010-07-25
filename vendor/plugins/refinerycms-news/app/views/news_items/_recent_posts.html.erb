@@ -1,5 +1,5 @@
-<h2>Recent Posts</h2>
-<ul>
+<h1 style="background-color: #E2EDEF; margin-top: -20px; height: auto">Recent Posts</h1>
+<ul style="background-color: #E2EDEF">
   <% @news_items.each do |item| %>
     <li>
       <%= link_to item.title, news_item_url(item) %>

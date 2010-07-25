@@ -44,7 +44,7 @@ class UsersController < ApplicationController
         end
 
         redirect_back_or_default(admin_root_url)
-        flash[:message] = "<h2>Welcome to Refinery, #{current_user.login}.</h2>"
+        flash[:message] = "<h2>Welcome to StIPS, #{current_user.login}.</h2>"
 
         if User.count == 1 or RefinerySetting[:site_name] == "Company Name"
           refinery_setting = RefinerySetting.find_by_name("site_name")
@@ -94,11 +94,11 @@ class UsersController < ApplicationController
   protected
 
   def redirect?
-    if logged_in?
-      redirect_to admin_users_url
-    else
-      redirect_to root_url unless can_create_public_user?
-    end
+#    if logged_in?
+#      redirect_to admin_users_url
+#    else
+      redirect_to home_page unless can_create_public_user?
+#    end
   end
 
   def can_create_public_user?

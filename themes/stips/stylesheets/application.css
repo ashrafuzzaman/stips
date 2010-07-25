@@ -1,18 +1,38 @@
 
-/*
-Design by Free CSS Templates
-http://www.freecsstemplates.org
-Released for free under a Creative Commons Attribution 2.5 License
-*/
-
 body {
     margin: 0;
     padding: 0;
-    background: #FFFFFF url(/theme/images/img01.jpg) repeat-x left top;
+    background: #FFFFFF url(/theme/images/blueback.png) repeat-x;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     color: #787878;
+    /*background-color: #E8EFF7;*/
+    
 }
+
+#body_content_left {
+    width: 600px;
+    float: left;
+    margin-left: 30px;
+}
+#body_content_right {
+    width: 285px;
+    /*height: auto;*/
+    float: right;
+    margin-right: 20px;
+    /*background-color: #E2EDEF;*/
+
+}
+#body_content_right img {
+    border: 3px solid #c7c7c7;
+}
+
+#page {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
 
 h1, h2, h3 {
     margin: 0;
@@ -22,15 +42,15 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 1.6em;
 }
 
 h2 {
-    font-size: 2.4em;
+    font-size: 2.2em;
 }
 
 h3 {
-    font-size: 1.6em;
+    font-size: 1.4em;
 }
 
 p, ul, ol {
@@ -51,16 +71,28 @@ a:hover {
 
 #wrapper {
     width: 960px;
+    
     margin: 0 auto;
+    margin-top: 15px;
     padding: 0;
-    background: url(/theme/images/img08.jpg) no-repeat left top;
+    /* background: url(/theme/images/img08.jpg) no-repeat left top;*/
+    -moz-box-shadow:0 1px 15px #444444;
+background:none repeat scroll 0 0 white;
+display:inline-block;
+
+overflow:hidden;
+padding-left:10px;
+padding-right:10px;
+
+display:block;
+/*width:910px;*/
 }
 
 /* Header */
 
 #header {
     width: 940px;
-    height: 40px;
+    height: 80px;
     margin: 0 auto;
 }
 
@@ -68,9 +100,16 @@ a:hover {
 
 #logo {
     float: left;
+    height: 120px;
     margin: 0;
-    padding-top: 20px;
-    color: #000000;
+    /*padding-top: 10px;*/
+    padding-left: 10px;
+    margin-left: 0px;
+    margin-top: 10px;
+    color: #CCCECF;
+    background:url(/theme/images/logo1.png) no-repeat;
+    font-family: "Gentium", "Arial Unicode MS", serif;
+    
 }
 
 #logo h1, #logo p {
@@ -88,17 +127,22 @@ a:hover {
 #logo p {
     float: left;
     margin: 0;
-    padding: 26px 0 0 10px;
-    font: normal 14px Georgia, "Times New Roman", Times, serif;
-    font-style: italic;
-    color: #FFFFFF;
+    padding: 55px 0 0 70px;
+    font: normal 18px Gentium, "Arial Unicode MS", serif;
+    font-style: normal;
+    color: #888888;
 } 
 
 #logo a {
     border: none;
     background: none;
     text-decoration: none;
-    color: #FFFFFF;
+    color: #FF0000;
+}
+
+#body_content_page_title {
+    padding-bottom: 8px;
+    margin-left: 15px;
 }
 
 /* Search */
@@ -144,50 +188,223 @@ a:hover {
     color: #246DFF;
 }
 
-/* Menu */
-
-#menu {
-    width: 940px;
-    height: 49px;
-    margin: 0 auto;
-    padding: 0;
+.userbox  {
+    background:url(/theme/images/bar-left.png) no-repeat scroll 0 0 transparent;
+    float:right;
+    font-size:12px;
+    height:39px;
+    padding-left:6px;
 }
 
-#menu ul {
+.userbox .inner {
+    background:url(/theme/images/bar-right.png) no-repeat scroll 100% 0 transparent;
+    height:29px;
+    padding:10px 12px 0 0px;
+}
+
+ul.usernav li {
+    background:url(/theme/images/bar_separator.gif) no-repeat scroll 5px 0 transparent;
+    display:inline;
+    list-style-type:none;
+    margin:0;
+    padding:0 0 0 15px;
+}
+
+
+
+/* Menu */
+#menulist {
+   margin-top: 65px;
+}
+
+#menu, #menu ul {
+    width: 960px;
+    height: 35px;
+    margin: 0 auto;
+    /*margin-top: 60px;*/
+    padding: 0;
+    list-style: none;
+    line-height: normal;
+    background-position:0 -715px !important;
+    /*background:url(/theme/images/menusprite.png) repeat-x scroll 0 -80px;*/
+    /*display: block;*/
+
+}
+
+
+
+/*#menu ul {
     margin: 0;
     padding: 0;
     list-style: none;
     line-height: normal;
+
+    background-position:0 -715px !important;
+    background:url(/theme/images/menusprite.png) repeat-x scroll 0 -84px transparent;
+
+}*/
+
+ul.submenu li {
+    float: left;
+   /* display: inline;*/
+    /*margin: 0;*/
+    width: 106.6px;
+    /*position: relative;*/
+    /*background-position:0 -715px !important;*/
+    /*background:url(/theme/images/submenu.png) repeat-x scroll 0 -84px;*/
+
+}
+
+ul.submenu li:hover {
+    /*float: left;*/
+   /*/* display: inline;
+    margin: 0;
+    width: 106.6px;
+    /*position: relative;*/
+    /*background-position:0 -715px !important;*/
+    background:url(/theme/images/submenuhover.png) repeat-x scroll 0 -84px;
+
 }
 
 #menu li {
     float: left;
+   /* display: inline;*/
+    /*margin: 0;*/
+    margin-top: -6px;
+    width: 106.6px;
+    /*position: relative;*/
+    background-position:0 -715px !important;
+    background:url(/theme/images/menusprite.png) repeat-x scroll 0 -84px;
+
+/*    background:url("/imgml/lev2/menusprite.png") no-repeat scroll 6px -1137px;
+    border:medium none;
+display:block;
+*/
+/*background:url(/theme/images/bar_separator.gif) no-repeat scroll 5px 0 transparent;
+    display:inline;
+    list-style-type:none;
+    padding:0 0 0 15px;
+*/
 }
+
+/*#menu li {
+
+}
+*/
+#menu li ul
+{
+    /*margin:0px;
+    padding:0px;*/
+    /*display:none;*/
+    position: absolute;
+    width: 106.6px;
+    left: -999em;
+
+}
+
+#menu li ul ul {
+	margin: -33px 0 0 110px;
+}
+
+#menu li:hover ul ul {
+	left: -999em;
+}
+
+
+
+#menu li:hover ul, #menu li li:hover ul
+{
+    /*display:block;
+    width:110px;*/
+
+    left: auto;
+    
+
+}
+
+#menu li:hover ul ul, #menu li:hover ul ul ul {
+	left: -999em;
+}
+
+#menu li:hover ul, #menu li li:hover ul, #menu li li li:hover ul {
+	left: auto;
+}
+
+/*
+#menu li ul li ul {
+    margin-left: 120px;
+    display: none;
+    position: absolute;
+}
+
+#menu li ul li:hover ul {
+    display: block;
+    width: 110px;
+}
+*/
+
 
 #menu a {
     display: block;
-    width: 155px;
-    height: 33px;
-    padding-top: 16px;
+    width: 106.6px;
+    height: 30px;
+    padding-top: 10px;
     text-decoration: none;
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: bold;
     color: #FFFFFF;
     border: none;
 }
 
-#menu a:hover, #menu .current_page_item a {
-    background: #659CEF url(/theme/images/img03.jpg) repeat-x left bottom;
+#menu li a:hover, #menu .current_page_item a {
+    margin-top: 5px;
+    background: #CC0000 repeat-x left bottom;
+    padding-top: 6px;
+    height: 25px;
+    margin-bottom: 4px;
+    /*padding-bottom: 5px;*/
+    /*background: #FF0033 url(/theme/images/img03.jpg) repeat-x left bottom;*/
     text-decoration: none;
 }
 
-#menu .current_page_item a {
-    background: #FBFBFC url(/theme/images/img02.jpg) repeat-x left bottom;
+#menu .current_page_item li a {
+    background: #CC0000 repeat-x left bottom;
     padding-left: 0;
     color: #30476A;
 }
+/*
+.leftcornerMenu {
+    background-position:0 -630px !important;
+    background:url(/theme/images/menusprite.png) repeat-y scroll 0 0 transparent;
+}
+.rightcornerMenu {
+    background-position:0 -672px !important;
+    background:url(/theme/images/menusprite.png) repeat-x scroll 0 -84px transparent;
+}*/
+
+/*
+Clearfix docs
+ - Main docs: http://positioniseverything.net/easyclearing.html
+ - IE7 change: http://www.456bereastreet.com/archive/200603/new_clearing_method_needed_for_ie7/
+*/
+div.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+div.clearfix {
+    display: inline-block;
+}
+/* Hide from IE Mac \*/
+div.clearfix {
+    /*zoom:1;*/
+    display:block;
+}
+/* End hide from IE Mac */
 
 /* Page */
 
@@ -198,7 +415,7 @@ a:hover {
 }
 
 #page-bgtop {
-    padding: 20px px;
+   /* padding: 20px 0px;*/
 }
 
 #page-bgbtm {
@@ -208,8 +425,8 @@ a:hover {
 
 #content {
     float: left;
-    width: 620px;
-    padding: 30px 0px 0px 0px;
+    width: 100%;
+    padding: 0px 20px 0px 20px;
 }
 
 .post {
@@ -363,22 +580,28 @@ a:hover {
 /* Footer */
 
 #footer {
-    height: 50px;
-    margin: 0 auto;
-    padding: 0px 0 15px 0;
-    background: #D8E7FE;
-    border-top: 1px solid #D3DEF0;
+    height: 40px;
+    width: 980px;
+    /*margin: 0 auto;*/
+    /*padding: 0px 0 5px 0;*/
+    margin-left: -10px;
+    padding-bottom: -10px;
+    /*background: #888888;*/
+    /*background: #FFFFFF;*/
+    background: #CCCECF;
+    border-top: 2px solid #CC2027;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 #footer p {
     margin: 0;
-    padding-top: 20px;
+    padding-top: 15px;
     line-height: normal;
     font-size: 10px;
     text-transform: uppercase;
     text-align: center;
-    color: #A0A0A0;
+    color: #FFFFFF;
+    font-weight: bolder;
 }
 
 #footer a {
@@ -401,7 +624,8 @@ a:hover {
 #gallery
 {
     width: 620px;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
+    margin-top: -25px;
 }
 
 #gallery img.output
@@ -468,6 +692,79 @@ a:hover {
 
 #faqs {
     margin-top: 10px;
-    padding: 5px 0 5px 25px;
+    padding: 5px 0 5px 45px;
     background-color: #e2edff;
 }
+
+.inquiries .field input, .inquiries textarea {
+  border: 1px solid #75766f;
+  margin-left: 0px;
+}
+.inquiries textarea {
+  width: 375px;
+}
+
+#poll {
+    float: right;
+    width: 250px;
+    padding-top: 10px;
+    color: #787878;
+}
+
+
+/*NavBar CSS*/
+#nav, #nav ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+        line-height: 1;
+}
+
+#nav a {
+	display: block;
+	width: 10em;
+}
+
+#nav li {
+	float: left;
+	width: 10em;
+}
+
+#nav li ul {
+	position: absolute;
+	width: 10em;
+	left: -999em;
+}
+
+#nav li:hover ul {
+	left: auto;
+}
+
+/*#nav li:hover ul, #nav li.sfhover ul {
+	left: auto;
+}*/
+
+
+#nav li ul ul {
+	margin: -1em 0 0 10em;
+}
+
+#nav li:hover ul ul, #nav li.sfhover ul ul {
+	left: -999em;
+}
+
+#nav li:hover ul, #nav li li:hover ul, #nav li.sfhover ul, #nav li li.sfhover ul {
+	left: auto;
+}
+
+#nav li:hover ul ul, #nav li:hover ul ul ul, #nav li.sfhover ul ul, #nav li.sfhover ul ul ul {
+	left: -999em;
+}
+
+#nav li:hover ul, #nav li li:hover ul, #nav li li li:hover ul, #nav li.sfhover ul, #nav li li.sfhover ul, #nav li li li.sfhover ul {
+	left: auto;
+}
+
+
+
+

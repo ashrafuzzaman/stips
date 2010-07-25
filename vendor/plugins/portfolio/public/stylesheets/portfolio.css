@@ -1,6 +1,6 @@
 #body_content.portfolio #body_content_left {
 	width: 621px;
-	margin-right: 39px;
+	margin-right: 30px;
 }
 #body_content.portfolio #body_content_left h1 {
 	margin-bottom: 24px;
@@ -15,7 +15,7 @@
 	display: block;
 }
 #body_content.portfolio #body_content_right {
-	width: 280px;
+	width: 225px;
 	text-align: left;
 	padding-top: 43px;
 }
@@ -25,7 +25,7 @@
 }
 #portfolio_main_image_container {
   border: 3px solid #d4cabc;
-  width: 100%;
+  width: 90%;
   text-align: center;
 }
 #portfolio_images {
