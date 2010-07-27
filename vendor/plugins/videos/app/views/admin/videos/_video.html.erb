@@ -1,0 +1,17 @@
+<li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(video) -%>">
+  <span class='title'>
+    <%=h video.title %>
+    <span class="preview">&nbsp;</span>
+
+    <span class='actions'>
+      <%= link_to refinery_icon_tag("application_go.png"), video_url(video),
+          :title => 'View this video<br/><em>Opens in a new window</em>',
+          :target => "_blank" %>
+      <%= link_to refinery_icon_tag("application_edit.png"), edit_admin_video_path(video),
+           :title => 'Edit this video' %>
+      <%= link_to refinery_icon_tag("delete.png"), admin_video_path(video),
+          :class => "cancel confirm-delete",
+          :title => 'Remove this video forever' %>
+    </span>
+  </span>
+</li>

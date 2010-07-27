@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="videos">
+    <% @videos.each do |video| %>
+      <li>
+        <%= link_to video.title, video_url(video) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

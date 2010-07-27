@@ -1,0 +1,30 @@
+<% content_for :body_content_title do %>
+  <%= @video.title %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  
+  <div>
+    <h3>Title</h3>
+    <%= @video.title %>
+  </div>
+  
+  <div>
+    <h3>Description</h3>
+    <%= @video.description %>
+  </div>
+  
+<% end %>
+
+<% content_for :body_content_right do %>
+  <h2>Other Videos</h2>
+  <ul id="videos">
+    <% @videos.each do |video| %>
+      <li>
+        <%= link_to video.title, video_url(video) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>
