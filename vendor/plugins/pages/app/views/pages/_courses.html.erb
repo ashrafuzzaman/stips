@@ -1,0 +1,15 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+
+<% content_for :body_content_left do %>
+
+<ul id="scourses">
+  <% @scourses.each do |scourse| %>
+    <li>
+      <%= link_to scourse.title, scourse_url(scourse) %>
+    </li>
+  <% end %>
+</ul>
+<% end %>
