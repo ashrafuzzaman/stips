@@ -2,4 +2,6 @@
   <% form_tag register_courses_users_path(:course_id => course.id) do -%>
     <div><%= submit_tag 'Register' %></div>
   <% end -%>
+<% else -%>
+  <strong>Registered to this course</strong>
 <% end -%>
