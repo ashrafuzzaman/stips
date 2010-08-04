@@ -1,0 +1,9 @@
+<%# content_for :body_content_left do %>
+<table id="courses" style="padding-left: 10px;">
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= link_to course.title, course_url(course) %></td>
+      </tr>
+    <% end %>
+  </table>
+<%# end %>
