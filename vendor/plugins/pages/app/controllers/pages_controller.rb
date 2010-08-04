@@ -9,6 +9,10 @@ class PagesController < ApplicationController
                 }
 
   def home
+    @courses = Course.find(:all, :order => "position ASC", :conditions => ["start_date > ?", Date.today], :limit => 5)
+#    @news_item = NewsItem.published.find(params[:id])
+    @news_items = NewsItem.latest.paginate(:page => params[:page]) # 10 items
+#    @news_items = NewsItem.find(:all, :order => "position ASC")
     error_404 unless (@page = Page.find_by_link_url("/", :include => [:parts, :slugs])).present?
   end
 

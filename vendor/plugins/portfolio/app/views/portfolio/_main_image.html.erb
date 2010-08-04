@@ -1,1 +1,1 @@
-<%= image_fu @image, :portfolio, :id => "portfolio_main_image" unless @image.nil? %>
+<%= image_fu(@image, :portfolio, :id => "portfolio_main_image", :width => 600, :height => (@image.height.to_f/@image.width * 600)) unless @image.nil? %>

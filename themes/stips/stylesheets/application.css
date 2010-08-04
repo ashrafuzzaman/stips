@@ -2,12 +2,14 @@
 body {
     margin: 0;
     padding: 0;
-    background: #FFFFFF url(/theme/images/blueback.png) repeat-x;
+    background: #FFFFFF url(/theme/images/blueback3.png) repeat-x;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     color: #787878;
     /*background-color: #E8EFF7;*/
-    
+    /*background-color: #F3F8FC;*/ /* blueback2 */
+    background-color: #E8F0F9;
+
 }
 
 #body_content_left {
@@ -71,21 +73,21 @@ a:hover {
 
 #wrapper {
     width: 960px;
-    
+
     margin: 0 auto;
     margin-top: 15px;
     padding: 0;
     /* background: url(/theme/images/img08.jpg) no-repeat left top;*/
     -moz-box-shadow:0 1px 15px #444444;
-background:none repeat scroll 0 0 white;
-display:inline-block;
+    background:none repeat scroll 0 0 white;
+    display:inline-block;
 
-overflow:hidden;
-padding-left:10px;
-padding-right:10px;
+    overflow:hidden;
+    padding-left:10px;
+    padding-right:10px;
 
-display:block;
-/*width:910px;*/
+    display:block;
+    /*width:910px;*/
 }
 
 /* Header */
@@ -109,7 +111,7 @@ display:block;
     color: #CCCECF;
     background:url(/theme/images/logo1.png) no-repeat;
     font-family: "Gentium", "Arial Unicode MS", serif;
-    
+
 }
 
 #logo h1, #logo p {
@@ -130,7 +132,7 @@ display:block;
     padding: 55px 0 0 70px;
     font: normal 18px Gentium, "Arial Unicode MS", serif;
     font-style: normal;
-    color: #888888;
+    color: #AAAEAF;
 } 
 
 #logo a {
@@ -214,7 +216,7 @@ ul.usernav li {
 
 /* Menu */
 #menulist {
-   margin-top: 65px;
+    margin-top: 65px;
 }
 
 #menu, #menu ul {
@@ -246,7 +248,7 @@ ul.usernav li {
 
 ul.submenu li {
     float: left;
-   /* display: inline;*/
+    /* display: inline;*/
     /*margin: 0;*/
     width: 106.6px;
     /*position: relative;*/
@@ -257,10 +259,10 @@ ul.submenu li {
 
 ul.submenu li:hover {
     /*float: left;*/
-   /*/* display: inline;
-    margin: 0;
-    width: 106.6px;
-    /*position: relative;*/
+    /*/* display: inline;
+     margin: 0;
+     width: 106.6px;
+     /*position: relative;*/
     /*background-position:0 -715px !important;*/
     background:url(/theme/images/submenuhover.png) repeat-x scroll 0 -84px;
 
@@ -268,7 +270,7 @@ ul.submenu li:hover {
 
 #menu li {
     float: left;
-   /* display: inline;*/
+    /* display: inline;*/
     /*margin: 0;*/
     margin-top: -6px;
     width: 106.6px;
@@ -276,15 +278,15 @@ ul.submenu li:hover {
     background-position:0 -715px !important;
     background:url(/theme/images/menusprite.png) repeat-x scroll 0 -84px;
 
-/*    background:url("/imgml/lev2/menusprite.png") no-repeat scroll 6px -1137px;
-    border:medium none;
-display:block;
-*/
-/*background:url(/theme/images/bar_separator.gif) no-repeat scroll 5px 0 transparent;
-    display:inline;
-    list-style-type:none;
-    padding:0 0 0 15px;
-*/
+    /*    background:url("/imgml/lev2/menusprite.png") no-repeat scroll 6px -1137px;
+        border:medium none;
+    display:block;
+    */
+    /*background:url(/theme/images/bar_separator.gif) no-repeat scroll 5px 0 transparent;
+        display:inline;
+        list-style-type:none;
+        padding:0 0 0 15px;
+    */
 }
 
 /*#menu li {
@@ -303,11 +305,11 @@ display:block;
 }
 
 #menu li ul ul {
-	margin: -33px 0 0 110px;
+    margin: -33px 0 0 107.4px;
 }
 
 #menu li:hover ul ul {
-	left: -999em;
+    left: -999em;
 }
 
 
@@ -318,16 +320,16 @@ display:block;
     width:110px;*/
 
     left: auto;
-    
+
 
 }
 
 #menu li:hover ul ul, #menu li:hover ul ul ul {
-	left: -999em;
+    left: -999em;
 }
 
 #menu li:hover ul, #menu li li:hover ul, #menu li li li:hover ul {
-	left: auto;
+    left: auto;
 }
 
 /*
@@ -415,7 +417,7 @@ div.clearfix {
 }
 
 #page-bgtop {
-   /* padding: 20px 0px;*/
+    /* padding: 20px 0px;*/
 }
 
 #page-bgbtm {
@@ -588,7 +590,7 @@ div.clearfix {
     padding-bottom: -10px;
     /*background: #888888;*/
     /*background: #FFFFFF;*/
-    background: #CCCECF;
+    background: #AAAEAF;
     border-top: 2px solid #CC2027;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -697,11 +699,11 @@ div.clearfix {
 }
 
 .inquiries .field input, .inquiries textarea {
-  border: 1px solid #75766f;
-  margin-left: 0px;
+    border: 1px solid #75766f;
+    margin-left: 0px;
 }
 .inquiries textarea {
-  width: 375px;
+    width: 375px;
 }
 
 #poll {
@@ -714,30 +716,30 @@ div.clearfix {
 
 /*NavBar CSS*/
 #nav, #nav ul {
-	padding: 0;
-	margin: 0;
-	list-style: none;
-        line-height: 1;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    line-height: 1;
 }
 
 #nav a {
-	display: block;
-	width: 10em;
+    display: block;
+    width: 10em;
 }
 
 #nav li {
-	float: left;
-	width: 10em;
+    float: left;
+    width: 10em;
 }
 
 #nav li ul {
-	position: absolute;
-	width: 10em;
-	left: -999em;
+    position: absolute;
+    width: 10em;
+    left: -999em;
 }
 
 #nav li:hover ul {
-	left: auto;
+    left: auto;
 }
 
 /*#nav li:hover ul, #nav li.sfhover ul {
@@ -746,23 +748,23 @@ div.clearfix {
 
 
 #nav li ul ul {
-	margin: -1em 0 0 10em;
+    margin: -1em 0 0 10em;
 }
 
 #nav li:hover ul ul, #nav li.sfhover ul ul {
-	left: -999em;
+    left: -999em;
 }
 
 #nav li:hover ul, #nav li li:hover ul, #nav li.sfhover ul, #nav li li.sfhover ul {
-	left: auto;
+    left: auto;
 }
 
 #nav li:hover ul ul, #nav li:hover ul ul ul, #nav li.sfhover ul ul, #nav li.sfhover ul ul ul {
-	left: -999em;
+    left: -999em;
 }
 
 #nav li:hover ul, #nav li li:hover ul, #nav li li li:hover ul, #nav li.sfhover ul, #nav li li.sfhover ul, #nav li li li.sfhover ul {
-	left: auto;
+    left: auto;
 }
 
 

@@ -1,20 +1,26 @@
 <% form_for [:admin, @course] do |f| -%>
   <%= f.error_messages %>
-  
+
   <div class='field'>
     <%= f.label :title -%>
     <%= f.text_field :title, :class => 'larger' -%>
   </div>
-  
+
   <div class='field'>
     <%= f.label :start_date -%>
     <%= f.date_select :start_date -%>
   </div>
-  
+
+  <div class='field'>
+    <%= f.label :fee -%>
+    <%= f.text_field :fee -%>
+    <%#= f.default(0) -%>
+  </div>
+
   <div class='field'>
     <%= f.label :description -%>
     <%= f.text_area :description, :rows => 20, :cols => 140, :class => 'wymeditor' -%>
   </div>
-  
+
   <%= render :partial => "/shared/admin/form_actions", :locals => {:f => f, :continue_editing => false} %>
 <% end -%>
