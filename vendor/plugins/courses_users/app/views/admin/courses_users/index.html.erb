@@ -1,0 +1,39 @@
+<strong><%= @course.title %></strong>
+<div id='actions'>
+  <ul>
+    <%#*<li>%>
+      <%#= render :partial => "/shared/admin/search", :locals => {:url => admin_courses_users_url} %>
+    <%#*</li>%>
+  <% if !searching? and CoursesUser.count > 1 %>
+    <li>
+      <%= link_to "Reorder Courses Users", admin_courses_users_url, :id => "reorder_action", :class => "reorder_icon" %>
+      <%= link_to "Done Reordering Courses Users", admin_courses_users_url, :id => "reorder_action_done", :style => "display: none;", :class => "reorder_icon" %>
+    </li>
+  <% end %>
+  </ul>
+</div>
+<div id='records'>
+  <% if searching? %>
+    <h2>Search Results for "<%= params[:search] %>"</h2>
+    <% if @courses_users.any? %>
+      <%= render :partial => "courses_users", :collection => @courses_users %>
+    <% else %>
+      <p>Sorry, no results found.</p>
+    <% end %>
+  <% else %>
+    <% if @courses_users.any? %>
+      <%= will_paginate @courses_users, :previous_label => '&laquo;', :next_label => '&raquo;' %>
+       <ul id='sortable_list'>
+        <%= render :partial => "sortable_list" %>
+       </ul>
+      <%= will_paginate @courses_users, :previous_label => '&laquo;', :next_label => '&raquo;' %>
+    <% else %>
+      <p>
+        <strong>
+          There are no one registered yet in this course.
+        </strong>
+      </p>
+    <% end %>
+  <% end %>
+</div>
+<%#= render :partial => "/shared/admin/make_sortable", :locals => {:tree => false } if !searching? and CoursesUser.count > 1 %>

@@ -60,6 +60,9 @@
         <div id="page-bgtop" >
           <div id="page-bgbtm">
             <div id="content">
+              <div id="flash_container">
+                <%= render :partial => "/shared/message" %>
+              </div>
               <div>
 <%#*<div id="gallery">%>
 <%#*<div id="gallery-background"><img src="/theme/images/01.jpg" alt="" width="600" height="340" class="output" /></div>%>
@@ -95,13 +98,13 @@
             </div>
             <div class="post">
               <%= yield %>
-              
+
             </div>
 
             <!-- end #content -->
-            <%#*<div id="sidebar" style="margin-left: 30px;">%>
-                <%#= render :partial => "/polls/poll" %>
-              <%#*</div>%>
+<%#*<div id="sidebar" style="margin-left: 30px;">%>
+<%#= render :partial => "/polls/poll" %>
+<%#*</div>%>
 
             <!-- end #sidebar -->
             <div style="clear: both;">&nbsp;</div>

@@ -1,0 +1,2 @@
+<%= render :partial => 'courses_users', :collection => @courses_users %>
+<%= render :partial => "/shared/admin/sortable_list", :locals => {:continue_reordering => (defined?(continue_reordering) ? continue_reordering : true)} %>

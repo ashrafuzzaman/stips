@@ -1,0 +1,5 @@
+<% if !course.registered?(current_user) %>
+  <% form_tag register_courses_users_path(:course_id => course.id) do -%>
+    <div><%= submit_tag 'Register' %></div>
+  <% end -%>
+<% end -%>

@@ -1,0 +1,40 @@
+<% content_for :body_content_title do %>
+  <%= @courses_users.amount_paid %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  
+  <div>
+    <h3>Amount Paid</h3>
+    <%= @courses_users.amount_paid %>
+  </div>
+  
+  <div>
+    <h3>Paid At</h3>
+    <%= @courses_users.paid_at %>
+  </div>
+  
+  <div>
+    <h3>Course</h3>
+    <%= link_to 'course', @courses_users.course.public_filename %>
+  </div>
+  
+  <div>
+    <h3>User</h3>
+    <%= link_to 'user', @courses_users.user.public_filename %>
+  </div>
+  
+<% end %>
+
+<% content_for :body_content_right do %>
+  <h2>Other Courses Users</h2>
+  <ul id="courses_users">
+    <% @courses_users.each do |courses_users| %>
+      <li>
+        <%= link_to courses_users.amount_paid, courses_users_url(courses_users) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

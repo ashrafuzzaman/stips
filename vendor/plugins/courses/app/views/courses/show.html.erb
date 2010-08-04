@@ -3,22 +3,23 @@
 <% end %>
 
 <% content_for :body_content_left do %>
-  
+
   <div>
     <h3>Title</h3>
     <%= @course.title %>
   </div>
-  
+
   <div>
     <h3>Start Date</h3>
     <%= @course.start_date %>
   </div>
-  
+
   <div>
     <h3>Description</h3>
     <%= @course.description %>
   </div>
-  
+
+  <%= render(:partial => "/courses_users/register", :locals => {:course => @course}) if logged_in? %>
 <% end %>
 
 <% content_for :body_content_right do %>

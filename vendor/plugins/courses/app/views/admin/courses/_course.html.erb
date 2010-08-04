@@ -12,6 +12,8 @@
       <%= link_to refinery_icon_tag("delete.png"), admin_course_path(course),
           :class => "cancel confirm-delete",
           :title => 'Remove this course forever' %>
+      <%= link_to refinery_icon_tag("application_go.png"), admin_courses_users_url(:course_id => course.id),
+          :title => 'View this registered members for this course' %>
     </span>
   </span>
 </li>
