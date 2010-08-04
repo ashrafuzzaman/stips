@@ -1,8 +1,6 @@
 class CoursesUser < ActiveRecord::Base
   include AASM
 
-  validates_presence_of :amount_paid
-
   belongs_to :course
   belongs_to :user
 

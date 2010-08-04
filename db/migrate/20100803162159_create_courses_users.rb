@@ -7,6 +7,8 @@ class CreateCoursesUsers < ActiveRecord::Migration
       t.integer :course_id
       t.integer :user_id
       t.string :status
+      t.string :token
+      t.string :params
 
       t.timestamps
     end
