@@ -5,6 +5,8 @@
 ## Plugins used
 
 * [refinerycms-faqs](http://github.com/ashrafuzzaman/refinerycms-faqs)
+* [refinerycms-poll](http://github.com/ashrafuzzaman/refinerycms-poll)
+* [active_merchant with payson implementation](http://github.com/ashrafuzzaman/active_merchant)
 
 
 ## Requirements

@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="courses_users">
+    <% @courses_users.each do |courses_users| %>
+      <li>
+        <%= link_to courses_users.amount_paid, courses_users_url(courses_users) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

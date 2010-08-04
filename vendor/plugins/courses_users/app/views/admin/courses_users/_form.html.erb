@@ -1,0 +1,35 @@
+<% form_for [:admin, @courses_users] do |f| -%>
+  <%= f.error_messages %>
+  
+  <div class='field'>
+    <%= f.label :amount_paid -%>
+    <%= f.text_field :amount_paid, :class => 'larger' -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :paid_at -%>
+    <%= f.datetime_select :paid_at -%>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :course -%>
+
+    <%= render :partial => "/shared/admin/resource_picker", :locals => {
+      :f => f,
+      :field => :course_id,
+      :resource => @courses_users.course,
+    } %>
+  </div>
+  
+  <div class='field'>
+    <%= f.label :user -%>
+
+    <%= render :partial => "/shared/admin/resource_picker", :locals => {
+      :f => f,
+      :field => :user_id,
+      :resource => @courses_users.user,
+    } %>
+  </div>
+  
+  <%= render :partial => "/shared/admin/form_actions", :locals => {:f => f, :continue_editing => false} %>
+<% end -%>

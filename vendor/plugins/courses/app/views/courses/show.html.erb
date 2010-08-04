@@ -33,31 +33,7 @@
 
   </table>
 
-  <%#*<div>%>
-    <%#*<h3>Course Name : </h3>%>
-    <%#= @course.title %>
-
-  <%#*</div>%>
-
-  <%#*<div>%>
-    <%#*<h3>Start Date</h3>%>
-    <%#= @course.start_date %>
-  <%#*</div>%>
-
-  <%#*<div>%>
-    <%#*<h3>Course Fee</h3>%>
-    <%#= @course.fee %> 
-  <%#*</div>%>
-
-  <%#*<div>%>
-    <%#*<h3>Description</h3>%>
-    <%#= @course.description %>
-  <%#*</div>%>
-
-  <%#*<p>%>
-    <%#= link_to "Back to all courses", courses_url %>
-  <%#*</p>%>
-
+  <%= render(:partial => "/courses_users/register", :locals => {:course => @course}) if logged_in? %>
 <% end %>
 
 <% content_for :body_content_right do %>

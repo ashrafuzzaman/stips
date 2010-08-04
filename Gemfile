@@ -21,6 +21,7 @@ gem 'hpricot',        '~> 0.8', :require => 'hpricot'
 gem 'rails',          '~> 2.3.5'
 gem 'rmagick',        '~> 2.12.2'
 gem 'will_paginate',  '~> 2.3.12', :require => 'will_paginate'
+gem 'aasm',           '~> 2.1.5'
 #===REFINERY END OF REQUIRED GEMS===
 
 #===REQUIRED FOR REFINERY GEM INSTALL===
