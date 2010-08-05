@@ -3,7 +3,8 @@ class CoursesUsersController < ApplicationController
   before_filter :initiate_courses_user, :only => [:success_callback, :cancel_callback]
 
   def register
-    course_user = current_user.courses_users.create(:course_id => params[:course_id], :amount_paid => 100)
+    course = Course.find params[:course_id]
+    course_user = current_user.courses_users.create(:course_id => params[:course_id], :amount_paid => course.fee)
     flash[:notice] = "Successfully registered..."
 
     pay_args = {:sender => {:email => params[:email], :first_name => params[:first_name], :last_name => params[:last_name]},
@@ -11,7 +12,7 @@ class CoursesUsersController < ApplicationController
       :cancel_url => cancel_callback_courses_user_url(course_user),
       :custom => course_user.id,
       :memo => "Payment for #{course_user.course.title}"}
-    @payment = Payson.new(100).pay pay_args
+    @payment = Payson.new(course.fee).pay pay_args
 
     course_user.update_attribute(:params, {:requested_params => pay_args, :response => @payment.response.params}.to_yaml)
 

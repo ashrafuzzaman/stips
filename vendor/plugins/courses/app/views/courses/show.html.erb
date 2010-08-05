@@ -33,7 +33,7 @@
 
   </table>
 
-  <%= render(:partial => "/courses_users/register", :locals => {:course => @course}) if logged_in? %>
+  <%= render(:partial => "/courses_users/register", :locals => {:course => @course}) %>
 <% end %>
 
 <% content_for :body_content_right do %>
