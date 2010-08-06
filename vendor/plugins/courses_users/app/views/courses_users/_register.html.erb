@@ -1,10 +1,24 @@
 <% if logged_in? %>
   <% if !course.registered?(current_user) %>
     <% form_tag register_courses_users_path(:course_id => course.id) do -%>
-      email <%= text_field_tag :email, current_user.email %><br/>
-      First name<%= text_field_tag :first_name %><br/>
-      Last name<%= text_field_tag :last_name %><br/>
-      <div><%= submit_tag 'Register' %></div>
+      <p><h3 style="padding-left: 3px;">Register to this course</h3></p>
+      <table>
+        <tr>
+          <td style="width: 100px;">Email</td>
+          <td><%= text_field_tag :email, current_user.email %></td>
+        </tr>
+        <tr>
+          <td>First Name</td>
+          <td><%= text_field_tag :first_name %></td>
+        </tr>
+        <tr>
+          <td>Last Name</td>
+          <td><%= text_field_tag :last_name %></td>
+        </tr>
+        <tr>
+          <td colspan="2"><%= submit_tag 'Register' %></td>
+        </tr>
+      </table>
     <% end -%>
   <% else -%>
     <strong>Registered to this course</strong>

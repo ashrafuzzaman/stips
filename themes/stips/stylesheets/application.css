@@ -2,13 +2,14 @@
 body {
     margin: 0;
     padding: 0;
-    background: #FFFFFF url(/theme/images/blueback3.png) repeat-x;
+    background: #FFFFFF url(/theme/images/bg.gif) repeat-x;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
-    color: #787878;
+    color: #555555;
     /*background-color: #E8EFF7;*/
     /*background-color: #F3F8FC;*/ /* blueback2 */
-    background-color: #E8F0F9;
+    /*background-color: #E8F0F9;*/
+    background-color: #EEEEEE;
 
 }
 
@@ -18,7 +19,7 @@ body {
     margin-left: 30px;
 }
 #body_content_right {
-    width: 285px;
+    width: 275px;
     /*height: auto;*/
     float: right;
     margin-right: 20px;
@@ -69,16 +70,17 @@ a {
 }
 
 a:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 #wrapper {
     width: 960px;
 
     margin: 0 auto;
-    margin-top: 15px;
+    margin-top: 5px;
     padding: 0;
     /* background: url(/theme/images/img08.jpg) no-repeat left top;*/
-    -moz-box-shadow:0 1px 15px #444444;
     background:none repeat scroll 0 0 white;
     display:inline-block;
 
@@ -87,6 +89,13 @@ a:hover {
     padding-right:10px;
 
     display:block;
+
+    -moz-box-shadow:0 1px 15px #444444;
+    -webkit-box-shadow: 0 1px 15px #444444;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+    /* For IE 5.5 - 7 */
+    /*filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');*/
     /*width:910px;*/
 }
 
@@ -105,8 +114,8 @@ a:hover {
     height: 120px;
     margin: 0;
     /*padding-top: 10px;*/
-    padding-left: 10px;
-    margin-left: 0px;
+    padding-left: 15px;
+    margin-left: 10px;
     margin-top: 10px;
     color: #CCCECF;
     background:url(/theme/images/logo1.png) no-repeat;
@@ -126,13 +135,13 @@ a:hover {
     font-size: 3.8em;
 }
 
-#logo p {
+#logo p{
     float: left;
     margin: 0;
-    padding: 55px 0 0 70px;
+    padding: 45px 0 0 70px;
     font: normal 18px Gentium, "Arial Unicode MS", serif;
     font-style: normal;
-    color: #AAAEAF;
+    color: #888888;
 } 
 
 #logo a {
@@ -196,6 +205,7 @@ a:hover {
     font-size:12px;
     height:39px;
     padding-left:6px;
+    margin-right: 10px;
 }
 
 .userbox .inner {
@@ -767,6 +777,86 @@ div.clearfix {
     left: auto;
 }
 
+tr.even {
+    background: #DBEDF9;
+}
 
+/*tr.odd {
+    background: #FFFFFF;
+}
+*/
+table.homepage {
+    width: 620px;
+    margin: 5px 0;
+    padding: 0;
+    border-bottom: 2px solid #DDDDDD;
+    border-top: 2px solid #DDDDDD;
+    border-collapse: collapse;
+    
+}
+
+/*table.homepage tr {
+    padding: 0.2em 0.5em;
+    
+}*/
+table.homepage td {
+    padding: 0.4em 1.5em;
+    border: 0 solid transparent;
+    
+}
+
+table.homepage a {
+    color: #205090;
+}
+
+#message, #flash {
+  padding: 8px 8px 8px 30px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.flash_notice, .flash_message {
+  border: 1px solid #00A017;
+  color: #00A017;
+  background: 7px 7px no-repeat url('/images/refinery/icons/accept.png') #E0F5E0;
+}
+.flash_notice, .flash_notice * {
+  color: #00A017;
+}
+.flash_error {
+  border: 1px solid #A00027;
+  color: #A00027;
+  background: 7px 7px no-repeat url('/images/refinery/icons/cancel.png') #FFB1B1;
+}
+#flash.flash_notice #flash_close, #flash.flash_error #flash_close {
+  text-transform: lowercase;
+}
+#flash.flash_message {
+  background: #E0F5E0;
+  padding: 9px;
+  position: relative;
+  margin-bottom: 32px;
+}
+#flash.flash_message h2 {
+  margin-top: 12px;
+}
+.flash_message, .flash_message * {
+  color: #262719;
+  font-size: 14px;
+}
+#flash a, #flash a:hover {
+  color: #e20003;
+  border-bottom-color: #e20003;
+}
+#flash.flash_error a, #flash.flash_error a:hover {
+  display: none;
+}
+#flash a#flash_close {
+  position: absolute;
+  right: 9px;
+  top: 7px;
+}
+#flash.flash_message a#flash_close {
+  top: 21px;
+}
 
 

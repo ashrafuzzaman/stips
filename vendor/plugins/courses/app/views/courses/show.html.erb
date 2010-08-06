@@ -6,16 +6,16 @@
 
   <table>
     <tr>
-      <td><h3>Course Name : </h3></td>
-      <td><%= @course.title %></td>
+      <td><h3>Course Name </h3></td>
+      <td>: <%= @course.title %></td>
     </tr>
     <tr>
-      <td><h3>Start Date : </h3></td>
-      <td><%= @course.start_date %></td>
+      <td><h3>Start Date</h3></td>
+      <td>: <%= @course.start_date %></td>
     </tr>
     <tr>
-      <td><h3>Course Fee : </h3></td>
-      <td><%= @course.fee %> SEK</td>
+      <td><h3>Course Fee</h3></td>
+      <td>: <%= @course.fee %> SEK</td>
     </tr>
     <tr>
       <td colspan="2"><p><h3>Description</h3></p></td>
@@ -23,22 +23,19 @@
     <tr>
       <td colspan="2"><%= @course.description %></td>
     </tr>
-    <tr>
-      <td colspan="2">
-        <p>
-          <%= link_to "Back to all courses", courses_url %>
-        </p>
-      </td>
-    </tr>
-
   </table>
 
   <%= render(:partial => "/courses_users/register", :locals => {:course => @course}) %>
+
+<br/>
+  <p>
+    <%= link_to "Back to all courses", courses_url %>
+  </p>
 <% end %>
 
 <% content_for :body_content_right do %>
-  <h2>Other Courses</h2>
-  <ul id="courses">
+  <h1 style="background-color: #DBEDF9; margin-top: -20px; height: auto">Other Courses</h1>
+  <ul id="courses" style="background-color: #DBEDF9;">
     <% @courses.each do |course| %>
       <li>
         <%= link_to course.title, course_url(course) %>

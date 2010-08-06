@@ -1,7 +1,7 @@
 <%#*<h1 style="background-color: #E2EDEF; margin-top: -20px; height: auto">Recent Posts</h1>%>
-<table style="padding-left: 10px;">
+<table class="homepage">
   <% @news_items.each do |item| %>
-    <tr>
+    <tr class="<%= cycle('odd', 'even') %>">
       <td>
         <%= link_to item.title, news_item_url(item) %>
       </td>

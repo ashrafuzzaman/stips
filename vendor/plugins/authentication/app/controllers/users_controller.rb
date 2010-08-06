@@ -43,7 +43,8 @@ class UsersController < ApplicationController
           end
         end
 
-        redirect_back_or_default(admin_root_url)
+#        redirect_back_or_default(admin_root_url)
+        redirect_to "/"
         flash[:message] = "<h2>Welcome to StIPS, #{current_user.login}.</h2>"
 
         if User.count == 1 or RefinerySetting[:site_name] == "Company Name"

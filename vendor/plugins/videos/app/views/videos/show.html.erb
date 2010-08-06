@@ -17,8 +17,8 @@
 <% end %>
 
 <% content_for :body_content_right do %>
-  <h2>Other Videos</h2>
-  <ul id="videos">
+  <h1 style="background-color: #DBEDF9; margin-top: -20px;">Other Videos</h1>
+  <ul id="videos" style="background-color: #DBEDF9;">
     <% @videos.each do |video| %>
       <li>
         <%= link_to video.title, video_url(video) %>
