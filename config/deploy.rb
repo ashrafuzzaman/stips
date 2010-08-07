@@ -1,7 +1,7 @@
 set :application, 'StIPS'
 set :user, 'p37r5007'
 set :domain, 'stips.se'
-set :mongrel_port, 'put_your_assigned_mongrel_port_number_here'
+set :mongrel_port, '17770'
 set :server_hostname, 'stips.se'
 
 set :git_account, 'mushfique'
