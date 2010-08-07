@@ -5,11 +5,11 @@ class Payson < ActiveMerchant::Billing::PaysonGateway
 
   def initialize(amount=nil)
     @amount = amount
-    super({:login => "4024", :password => "24a4fa58-3b42-42f5-92d3-1c6fb5ec4f89"})
+    super({:login => "dddd", :password => "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"})
   end
 
   def pay(options = {})
-    options.merge!({:receivers => [{:email => "info@simplesignup.se", :amount => @amount.to_s}] })
+    options.merge!({:receivers => [{:email => "info@stips.se", :amount => @amount.to_s}] })
     @response = authorize(options)
     self
   end
