@@ -5,7 +5,12 @@ class CoursesUsersController < ApplicationController
   def register
     course = Course.find params[:course_id]
     course_user = current_user.courses_users.create(:course_id => params[:course_id], :amount_paid => course.fee)
-    flash[:notice] = "Successfully registered..."
+    if course.free?
+      course_user.confirm!
+      flash[:notice] = "Successfully registered..."
+      redirect_to_course_page
+      return
+    end
 
     pay_args = {:sender => {:email => params[:email], :first_name => params[:first_name], :last_name => params[:last_name]},
       :return_url => success_callback_courses_user_url(course_user),
@@ -29,12 +34,14 @@ class CoursesUsersController < ApplicationController
 
     if payment_response.completed?
       @courses_user.confirm!
+      flash[:notice] = "Successfully registered..."
     end
     redirect_to_course_page
   end
 
   def cancel_callback
     @courses_user.fail!
+    flash[:notice] = "Coursen registeration failed. Please try later..."
     redirect_to_course_page
   end
 

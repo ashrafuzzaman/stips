@@ -12,4 +12,8 @@ class Course < ActiveRecord::Base
     self.users.exists? users
   end
 
+  def free?
+    fee == 0
+  end
+
 end
