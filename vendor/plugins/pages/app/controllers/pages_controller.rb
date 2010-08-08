@@ -9,7 +9,8 @@ class PagesController < ApplicationController
                 }
 
   def home
-    @courses = Course.find(:all, :order => "position ASC", :conditions => ["start_date > ?", Date.today], :limit => 5)
+#    @courses = Course.find(:all, :order => "start_date ASC", :conditions => ["start_date > ?", Date.today], :limit => 5)
+    @courses = Course.active.find(:all, :order => "start_date ASC", :conditions => ["start_date > ?", Date.today], :limit => 5)
 #    @news_item = NewsItem.published.find(params[:id])
     @news_items = NewsItem.latest.paginate(:page => params[:page]) # 10 items
 #    @news_items = NewsItem.find(:all, :order => "position ASC")

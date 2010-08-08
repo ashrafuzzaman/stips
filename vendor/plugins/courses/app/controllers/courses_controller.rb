@@ -20,7 +20,7 @@ class CoursesController < ApplicationController
 protected
 
   def find_all_courses
-    @courses = Course.find(:all, :order => "position ASC")
+    @courses = Course.find(:all, :order => "start_date ASC", :conditions => {:active => true})
   end
 
   def find_page

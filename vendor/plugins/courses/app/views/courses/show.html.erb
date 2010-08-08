@@ -25,9 +25,18 @@
     </tr>
   </table>
 
-  <%= render(:partial => "/courses_users/register", :locals => {:course => @course}) %>
+  <div style="padding-left: 3px;">
+    <p><h3>Register to this course</h3></p>
+  <% if @course.max_limit > @course.courses_users.confirmed.count  %>
+    <%= render(:partial => "/courses_users/register", :locals => {:course => @course}) %>
+  <% else -%>
+    <p>
+      <strong style="color: #CC2027;">Sorry! There is no open place in this course.</strong>
+    </p>
+  <% end -%>
+  </div>
 
-<br/>
+  <br/>
   <p>
     <%= link_to "Back to all courses", courses_url %>
   </p>

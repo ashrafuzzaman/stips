@@ -22,5 +22,15 @@
     <%= f.text_area :description, :rows => 20, :cols => 140, :class => 'wymeditor' -%>
   </div>
 
+ <div class='field'>
+    <%= f.label :max_limit -%>
+    <%= f.text_field :max_limit -%>
+  </div
+
+   <div class='field'>
+    <%= f.label :active -%>
+    <%= f.check_box :active -%>
+  </div
+
   <%= render :partial => "/shared/admin/form_actions", :locals => {:f => f, :continue_editing => false} %>
 <% end -%>
