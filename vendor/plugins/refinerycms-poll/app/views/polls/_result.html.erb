@@ -1,0 +1,5 @@
+<div><strong><%= poll.title %> [Total: <%= poll.total_vote %>]</strong></div>
+<% total_vote = [poll.total_vote, 1].max %>
+<% poll.poll_answers.each do |poll_answer| %>
+  <%= poll_answer.title %> : <%= ((poll_answer.vote.to_f*100)/total_vote).round(2) %> %<br/>
+<% end %>

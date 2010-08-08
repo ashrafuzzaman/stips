@@ -21,7 +21,8 @@ class PollsController < ApplicationController
       poll_answer = PollAnswer.find(poll_answer_id)
       poll_answer.vote += 1
       poll_answer.save
-      UsersPoll.create(:user_id => current_user.id, :poll_answer_id => poll_answer_id, :poll_id => params[:id])
+      UsersPoll.create(:user_identifier => request.ip, :poll_answer_id => poll_answer_id, :poll_id => params[:id])
+      session[:recent_poll_id] = @poll.id
     end
     redirect_to :back
   end

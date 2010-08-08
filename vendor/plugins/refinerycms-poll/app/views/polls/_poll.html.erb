@@ -1,28 +1,30 @@
+<% if session[:recent_poll_id].present? && Poll.exists?(session[:recent_poll_id]) %>
+  Result of last poll
+  <%= render(:partial => "/polls/result", :locals => {:poll => Poll.find(session[:recent_poll_id])}) %>
+<% end -%>
 
-<% if logged_in? %>
-  <% @poll = Poll.active_poll(current_user.id) %>
-  <% if !@poll.nil? %>
-    <h3>User Poll</h3>
+<% @poll = Poll.active_poll(request.ip) %>
+<% if !@poll.nil? %>
+  <h3>User Poll</h3>
 
-    <div>
-      <%= error_messages_for :poll -%>
-      <% form_for :poll, :url => submit_poll_path(@poll) do |f| -%>
-        <table class="homepage" style="width:250px;">
-          <tr><td style="color:#4486C7;padding-left: 0;"><%= @poll.title %></td></tr>
-          <tr>
-            <td>
-              <% @poll.poll_answers.each do |ans| %>
-                <%= radio_button_tag("poll_answer_id", ans.id) %> <%= ans.title %><br/>
-              <% end -%>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <%= f.submit 'Submit' %>
-            </td>
-          </tr>
-        </table>
-      </div>
-    <% end -%>
+  <div>
+    <%= error_messages_for :poll -%>
+    <% form_for :poll, :url => submit_poll_path(@poll) do |f| -%>
+      <table class="homepage" style="width:250px;">
+        <tr><td style="color:#4486C7;padding-left: 0;"><%= @poll.title %></td></tr>
+        <tr>
+          <td>
+            <% @poll.poll_answers.each do |ans| %>
+              <%= radio_button_tag("poll_answer_id", ans.id) %> <%= ans.title %><br/>
+            <% end -%>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <%= f.submit 'Submit' %>
+          </td>
+        </tr>
+      </table>
+    </div>
   <% end -%>
 <% end -%>

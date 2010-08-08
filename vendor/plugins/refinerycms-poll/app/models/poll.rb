@@ -6,12 +6,14 @@ class Poll < ActiveRecord::Base
   validates_presence_of :title
   validates_uniqueness_of :title
   has_many :poll_answers
-  named_scope :active
-  #named_scope :active, lambda { { :conditions => ["start_date >= ? and end_date <= ?", Date.today, Date.today] } }
 
-  def self.active_poll(user_id)
-    users_polls = UsersPoll.find_all_by_user_id(user_id, :select => :poll_id)
-    polls = users_polls.count > 0 ? Poll.active.find(:all, :conditions => ["id NOT IN (?)", users_polls.collect {|up| up.poll_id } ]) : Poll.active
+  def self.active_poll(user_identifier)
+    users_polls = UsersPoll.find_all_by_user_identifier(user_identifier, :select => :poll_id)
+    polls = users_polls.count > 0 ? Poll.find(:all, :conditions => ["id NOT IN (?)", users_polls.collect {|up| up.poll_id } ]) : Poll.all
     polls.count > 0 ? polls.first : nil
+  end
+
+  def total_vote
+    poll_answers.sum(:vote)
   end
 end
