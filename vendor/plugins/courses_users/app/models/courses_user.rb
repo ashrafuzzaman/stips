@@ -21,6 +21,16 @@ class CoursesUser < ActiveRecord::Base
 
   def update_confirmed_at
     update_attribute :confirmed_at, Time.now
+    send_confirmation_emails
+  end
+
+  def send_confirmation_emails
+    begin
+      SystemMailer.deliver_course_registration_email(self)
+      SystemMailer.deliver_course_registration_admin_email(self)
+    rescue Exception => ex
+      logger.error ex
+    end
   end
 
   def status_color

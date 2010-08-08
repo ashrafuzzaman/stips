@@ -9,7 +9,7 @@ class Course < ActiveRecord::Base
   validates_uniqueness_of :title
 
   def registered?(user)
-    self.users.exists? users
+    self.users.exists? user
   end
 
   def free?
