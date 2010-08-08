@@ -1,15 +1,6 @@
 <strong><%= @course.title %></strong>
 <div id='actions'>
   <ul>
-    <%#*<li>%>
-      <%#= render :partial => "/shared/admin/search", :locals => {:url => admin_courses_users_url} %>
-    <%#*</li>%>
-  <% if !searching? and CoursesUser.count > 1 %>
-    <li>
-      <%= link_to "Reorder Courses Users", admin_courses_users_url, :id => "reorder_action", :class => "reorder_icon" %>
-      <%= link_to "Done Reordering Courses Users", admin_courses_users_url, :id => "reorder_action_done", :style => "display: none;", :class => "reorder_icon" %>
-    </li>
-  <% end %>
   </ul>
 </div>
 <div id='records'>

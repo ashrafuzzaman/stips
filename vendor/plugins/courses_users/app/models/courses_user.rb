@@ -23,4 +23,12 @@ class CoursesUser < ActiveRecord::Base
     update_attribute :confirmed_at, Time.now
   end
 
+  def status_color
+    case status
+    when "confirmed" then "green"
+    when "pending" then "#F9FA0C"
+    when "failed" then "red"
+    end
+  end
+
 end

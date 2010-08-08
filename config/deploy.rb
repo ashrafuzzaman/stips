@@ -6,8 +6,6 @@ set :server_hostname, 'stips.se'
 
 set :git_account, 'mushfique'
 
-set :scm_passphrase,  Proc.new { Capistrano::CLI.password_prompt('password') }
-
 role :web, server_hostname
 role :app, server_hostname
 role :db, server_hostname, :primary => true
