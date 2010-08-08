@@ -1,0 +1,85 @@
+--- 
+dependencies: 
+  rails: 
+    group: 
+    - :default
+    version: ~> 2.3.5
+  authlogic: 
+    group: 
+    - :default
+    version: ~> 2.1.5
+    require: 
+    - authlogic
+  mysql: 
+    group: 
+    - :default
+    version: ">= 0"
+    require: 
+    - mysql
+  unicorn: 
+    group: 
+    - :development
+    version: ">= 0"
+  friendly_id: 
+    group: 
+    - :default
+    version: ~> 3.0.4
+    require: 
+    - friendly_id
+  will_paginate: 
+    group: 
+    - :default
+    version: ~> 2.3.12
+    require: 
+    - will_paginate
+  rmagick: 
+    group: 
+    - :default
+    version: ~> 2.12.2
+  aasm: 
+    group: 
+    - :default
+    version: ~> 2.1.5
+  hpricot: 
+    group: 
+    - :default
+    version: ~> 0.8
+    require: 
+    - hpricot
+specs: 
+- rake: 
+    version: 0.8.7
+- aasm: 
+    version: 2.1.5
+- activesupport: 
+    version: 2.3.8
+- rack: 
+    version: 1.1.0
+- actionpack: 
+    version: 2.3.8
+- actionmailer: 
+    version: 2.3.8
+- activerecord: 
+    version: 2.3.8
+- activeresource: 
+    version: 2.3.8
+- authlogic: 
+    version: 2.1.5
+- friendly_id: 
+    version: 3.0.6
+- hpricot: 
+    version: 0.8.2
+- mysql: 
+    version: 2.8.1
+- rails: 
+    version: 2.3.8
+- rmagick: 
+    version: 2.12.2
+- unicorn: 
+    version: 0.991.0
+- will_paginate: 
+    version: 2.3.14
+hash: 069ab0e9086e56c9183b3c799facbfb2ff39bc9c
+sources: 
+- Rubygems: 
+    uri: http://gemcutter.org
