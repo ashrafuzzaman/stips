@@ -4,6 +4,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 # Here we load in Refinery to do the rest of the heavy lifting.
 # Refinery is setup in config/preinitializer.rb
 require Refinery.root.join("lib", "refinery_initializer").cleanpath.to_s
+require 'aasm'
 
 # Boot with Refinery. Most configuration is handled by Refinery.
 # Anything you specify here that Refinery specified internally will override Refinery.
