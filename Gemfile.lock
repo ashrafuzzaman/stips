@@ -7,7 +7,7 @@ dependencies:
   authlogic: 
     group: 
     - :default
-    version: ~> 2.1.5
+    version: ~> 2.1.4
     require: 
     - authlogic
   mysql: 
@@ -19,7 +19,7 @@ dependencies:
   friendly_id: 
     group: 
     - :default
-    version: ~> 3.0.4
+    version: ~> 2.3.4
     require: 
     - friendly_id
   will_paginate: 
@@ -31,7 +31,7 @@ dependencies:
   rmagick: 
     group: 
     - :default
-    version: ~> 2.12.2
+    version: ~> 2.13.1
   aasm: 
     group: 
     - :default
@@ -62,7 +62,7 @@ specs:
 - authlogic: 
     version: 2.1.5
 - friendly_id: 
-    version: 3.0.6
+    version: 2.3.4
 - hpricot: 
     version: 0.8.2
 - mysql: 
@@ -70,10 +70,10 @@ specs:
 - rails: 
     version: 2.3.8
 - rmagick: 
-    version: 2.12.2
+    version: 2.13.1
 - will_paginate: 
     version: 2.3.14
-hash: 027e8db4764a2259fa239c21b5375fcf57ad68a8
+hash: 76c1f5f05c2ecc1fda5dbe6a544c5093b3e02fdd
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org

@@ -15,11 +15,11 @@ gem 'mysql', :require => 'mysql'
 # gem 'aws-s3'
 
 #===REFINERY REQUIRED GEMS===
-gem 'authlogic',      '~> 2.1.5', :require => 'authlogic'
-gem 'friendly_id',    '~> 3.0.4', :require => 'friendly_id'
+gem 'authlogic',      '~> 2.1.4', :require => 'authlogic'
+gem 'friendly_id',    '~> 2.3.4', :require => 'friendly_id'
 gem 'hpricot',        '~> 0.8', :require => 'hpricot'
 gem 'rails',          '~> 2.3.5'
-gem 'rmagick',        '~> 2.12.2'
+gem 'rmagick',        '~> 2.13.1'
 gem 'will_paginate',  '~> 2.3.12', :require => 'will_paginate'
 gem 'aasm',           '~> 2.1.5'
 #===REFINERY END OF REQUIRED GEMS===
