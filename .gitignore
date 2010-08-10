@@ -6,7 +6,6 @@ tmp/**/*
 doc/api
 doc/app
 doc/*
-config/database.yml
 config/amazon_s3.yml
 config/rackspace_cloudfiles.yml
 nbproject

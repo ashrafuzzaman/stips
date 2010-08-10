@@ -16,10 +16,6 @@ dependencies:
     version: ">= 0"
     require: 
     - mysql
-  unicorn: 
-    group: 
-    - :development
-    version: ">= 0"
   friendly_id: 
     group: 
     - :default
@@ -75,11 +71,9 @@ specs:
     version: 2.3.8
 - rmagick: 
     version: 2.12.2
-- unicorn: 
-    version: 0.991.0
 - will_paginate: 
     version: 2.3.14
-hash: 069ab0e9086e56c9183b3c799facbfb2ff39bc9c
+hash: 027e8db4764a2259fa239c21b5375fcf57ad68a8
 sources: 
 - Rubygems: 
     uri: http://gemcutter.org
