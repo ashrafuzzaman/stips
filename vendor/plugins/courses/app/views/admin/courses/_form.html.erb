@@ -12,9 +12,14 @@
   </div>
 
   <div class='field'>
+    <%= f.label :negotiable -%>
+    <%= f.check_box :negotiable -%>
+  </div
+
+  <div class='field'>
     <%= f.label :fee -%>
     <%= f.text_field :fee -%>
-    <%#= f.default(0) -%>
+  <%#= f.default(0) -%>
   </div>
 
   <div class='field'>
@@ -22,12 +27,12 @@
     <%= f.text_area :description, :rows => 20, :cols => 140, :class => 'wymeditor' -%>
   </div>
 
- <div class='field'>
+  <div class='field'>
     <%= f.label :max_limit -%>
     <%= f.text_field :max_limit -%>
   </div
 
-   <div class='field'>
+  <div class='field'>
     <%= f.label :active -%>
     <%= f.check_box :active -%>
   </div
