@@ -16,5 +16,5 @@ production:
   database: p37r5007_stips
   adapter: mysql
   host: localhost
-  username: p37r5007_root
+  username: p37r5007_admin
   password: stips01
