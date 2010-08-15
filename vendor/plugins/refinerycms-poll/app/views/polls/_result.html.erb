@@ -1,5 +1,10 @@
-<div><strong><%= poll.title %> [Total: <%= poll.total_vote %>]</strong></div>
+<div style="padding-top: 10px;padding-bottom: 10px;color:#4486C7;"><%= poll.title %>
+    [Total Votes: <%= poll.total_vote %>]</div>
 <% total_vote = [poll.total_vote, 1].max %>
+<ul>
 <% poll.poll_answers.each do |poll_answer| %>
+  <li style="margin-left: -15px; font-size: 9.8px;">
   <%= poll_answer.title %> : <%= ((poll_answer.vote.to_f*100)/total_vote).round(2) %> %<br/>
+  </li>
 <% end %>
+  </ul>

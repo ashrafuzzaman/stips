@@ -1,7 +1,3 @@
-<% if session[:recent_poll_id].present? && Poll.exists?(session[:recent_poll_id]) %>
-  Result of last poll
-  <%= render(:partial => "/polls/result", :locals => {:poll => Poll.find(session[:recent_poll_id])}) %>
-<% end -%>
 
 <% @poll = Poll.active_poll(request.ip) %>
 <% if !@poll.nil? %>
@@ -10,11 +6,11 @@
   <div>
     <%= error_messages_for :poll -%>
     <% form_for :poll, :url => submit_poll_path(@poll) do |f| -%>
-      <table class="homepage" style="width:250px;">
-        <tr><td style="color:#4486C7;padding-left: 0;"><%= @poll.title %></td></tr>
-        <tr>
-          <td>
-            <% @poll.poll_answers.each do |ans| %>
+      <table class="homepage" style="width:240px; margin-bottom: 10px; font-size: 9.8px;">
+        <tr><td style="color:#4486C7;padding-left: 0; font-size: small;"><%= @poll.title %></td></tr>
+        <% @poll.poll_answers.each do |ans| %>
+          <tr class="<%= cycle('odd', 'even') %>">
+            <td>
               <%= radio_button_tag("poll_answer_id", ans.id) %> <%= ans.title %><br/>
             <% end -%>
           </td>
@@ -25,6 +21,12 @@
           </td>
         </tr>
       </table>
+
+      <% if session[:recent_poll_id].present? && Poll.exists?(session[:recent_poll_id]) %>
+        <h3>Result of last poll</h3>
+        <%= render(:partial => "/polls/result", :locals => {:poll => Poll.find(session[:recent_poll_id])}) %>
+      <% end -%>
+
     </div>
   <% end -%>
 <% end -%>

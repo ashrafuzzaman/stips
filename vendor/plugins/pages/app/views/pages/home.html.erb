@@ -1,15 +1,66 @@
-<div id="home" style="float: left; margin-left: 10px;">
-  <div id="gallery">
-    <div id="gallery-background"><img src="/theme/images/01.jpg" alt="" width="600" height="340" class="output" /></div>
-    <div id="gallery-bgthumb">
-      <ul class="thumbnails">
-        <li><img src="/theme/images/01.jpg" title="LA Skyline ; Upwards shot of a small portion of Los Angeles' skyline." alt="" width="128" height="88" /></li>
-        <li><img src="/theme/images/02.jpg" title="Leaf ; A close up shot of a green leaf." alt="" width="100" height="75" /></li>
-        <li><img src="/theme/images/03.jpg" title="Chinese Bell ; A large bell inscribed with Chinese characters." alt="" width="100" height="75" /></li>
-        <li><img src="/theme/images/04.jpg" title="Ladybird ; A close up shot of a ladybird making its way across a leaf." alt="" width="100" height="75" /></li>
-      </ul>
-      <br class="clear" />
+<div id="home">
+  <div id="left-section">
+    <div id="gallery">
+      <div id="gallery-background"><img src="/theme/images/01.jpg" alt="" width="600" height="340" class="output" /></div>
+      <div id="gallery-bgthumb">
+        <ul class="thumbnails">
+          <li><img src="/theme/images/01.jpg" title="LA Skyline ; Upwards shot of a small portion of Los Angeles' skyline." alt="" width="128" height="88" /></li>
+          <li><img src="/theme/images/02.jpg" title="Leaf ; A close up shot of a green leaf." alt="" width="100" height="75" /></li>
+          <li><img src="/theme/images/03.jpg" title="Chinese Bell ; A large bell inscribed with Chinese characters." alt="" width="100" height="75" /></li>
+          <li><img src="/theme/images/04.jpg" title="Ladybird ; A close up shot of a ladybird making its way across a leaf." alt="" width="100" height="75" /></li>
+        </ul>
+        <br class="clear" />
+      </div>
+      <div id="homepage_content" style="padding-left: 10px;">
+  <div style="clear: both; padding-top: 20px;">
+    <h3>Upcoming Courses</h3>
+    <%= render :partial => "/courses/upcoming_courses" %>
+  </div>
+
+  <div style="clear: both; padding-top: 20px;">
+    <h3>Recent News</h3>
+    <%= render :partial => "/news_items/recent_news" %>
+  </div>
+</div>  
+
     </div>
+  </div>
+  <div id="right-section">
+    <div id="actions">
+      <ul>
+        <li>
+          <a href="http://www.facebook.com" style="font-size: 14px; font-weight: bold;">Link to FaceBook</a>
+        </li>
+      </ul>
+    </div>
+    <div id="quotes">
+      <ul>
+        <li>
+          <div class="quotation">"I have the feeling that I really became another person, more experienced and more self confident in public speaking area."</div>
+          <div class="quoter">Viktorija,&nbsp;27,
+            Medical Researcher, Enskede</div>
+          
+        </li>
+        <div style="clear: both;">&nbsp;</div>
+        <li>
+          <div class="quotation">"I strongly believe that skills learnt in this course will help me achieve my future goals."</div>
+          <div class="quoter">Zahid, 43, Teacher, Solna</div>
+        </li>
+        <div style="clear: both;">&nbsp;</div>
+        <li>
+          <div class="quotation">"Very useful! I will immediately implement the learned Public Speaking techniques on my presentations."</div>
+          <div class="quoter">Boban, 35, Engineer, Enskede</div>
+        </li>
+        <%#*<div style="clear: both;">&nbsp;</div>%>
+      </ul>
+
+
+    </div>
+    <div id="poll">
+      <%= render :partial => "/polls/poll" %>
+    </div>
+
+
   </div>
 </div>
 <script type="text/javascript">
@@ -27,25 +78,13 @@
 <div class="post">
   <%= yield %>
 </div>
-<div id="homepage_content" style="padding-left: 10px;">
-  <div style="clear: both; padding-top: 20px;">
-    <h3>Upcoming Courses</h3>
-    <%= render :partial => "/courses/upcoming_courses" %>
-  </div>
 
-  <div style="clear: both; padding-top: 20px;">
-    <h3>Recent News</h3>
-    <%= render :partial => "/news_items/recent_news" %>
-  </div>
-</div>
 
 
 <!-- end #content -->
 
 <!-- end #page -->
 <%#= render :partial => "/shared/content_page" %>
-<div id="poll" style="margin-top: -200px; margin-right: 15px;">
-  <%= render :partial => "/polls/poll" %>
-</div>
+
 <!-- end #sidebar -->
 <div style="clear: both;">&nbsp;</div>
