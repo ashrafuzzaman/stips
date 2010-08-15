@@ -1,10 +1,14 @@
 class CoursesUsersController < ApplicationController
-  before_filter :login_required
+  #before_filter :login_required
   before_filter :initiate_courses_user, :only => [:success_callback, :cancel_callback]
 
   def register
     course = Course.find params[:course_id]
-    @course_user = current_user.courses_users.create(:course_id => params[:course_id], :amount_paid => course.fee)
+    @course_user = course.courses_users.create(
+      :email => params[:email],
+      :first_name => params[:first_name],
+      :last_name => params[:last_name],
+      :amount_paid => course.fee)
     if course.free?
       @course_user.confirm!
       flash[:notice] = "Successfully registered..."
@@ -27,6 +31,7 @@ class CoursesUsersController < ApplicationController
       redirect_to cancel_callback_courses_user_path(@course_user)
     end
   end
+  
 
 
   def success_callback

@@ -1,3 +1,9 @@
+<%
+# Internet Explorer is fine with JS caching, but cache CSS and kaboom.
+# Would be great if someone could fix this?
+js_caching = RefinerySetting.find_or_set(:use_resource_caching, Rails.root.join('public', 'javascripts', 'cache').writable?)
+-%>
+
 <% theme ||= false -%>
 <head>
   <title><%= browser_title(yield(:title)) %></title>
@@ -11,6 +17,17 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <%= "<meta name=\"keywords\" content=\"#{@meta.meta_keywords}\" />" if @meta.meta_keywords.present? %>
   <%= "<meta name=\"description\" content=\"#{@meta.meta_description}\" />" if @meta.meta_description.present? -%>
+  <%= jquery_include_tags(:caching => js_caching) %>
+
+  <script type='text/javascript'>
+    $(document).ready(function() {
+      $('#flash').show();
+      $('#flash').click(function(e) {
+        $('#flash').hide();
+      });
+    });
+  </script>
+
   <%= yield :head_libraries %>
   <%= yield :head %>
 </head>
