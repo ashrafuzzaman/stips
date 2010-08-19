@@ -11,7 +11,7 @@ class SystemMailer < ActionMailer::Base
 
   def course_registration_admin_email(course_user)
     subject    "Confirmation notification email for course registration for #{course_user.title}"
-    recipients 'zmn.ashraf@gmail.com'
+    recipients 'ruben.brunsveld@stips.se'
     #from       ''
     sent_on    Time.now
     
