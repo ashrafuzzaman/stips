@@ -905,6 +905,7 @@ table.homepage a {
 
 #quotes ul li {
     margin-left: -40px;
+    margin-bottom: 12px;
     background-color:#EEEEEE;
     background-position:12px 50%;
     background-repeat:no-repeat;

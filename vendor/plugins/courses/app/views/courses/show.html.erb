@@ -16,7 +16,7 @@
     <tr>
       <td><h3>Course Fee</h3></td>
       <% if @course.negotiable%>
-      <td>: The fee is negotiable. Please <a href="/contact" title="Contact">contact</a> the course administrator</td>
+      <td>: On request. Please <a href="/contact" title="Contact">contact</a> the course administrator</td>
       <% else -%>
       <td>: <%= @course.fee %> SEK</td>
       <% end -%>
