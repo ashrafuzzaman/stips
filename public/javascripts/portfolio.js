@@ -59,9 +59,11 @@ $(document).ready(function() {
   $("ul#portfolio_images li a").click(function(event) {
     if (!$(this).hasClass('selected')) {
       clicked_on = $(this);
+      $('#portfolio_main_image_title').html("");
       $.get($(this).attr('href'), function(data, textStatus) {
         if (textStatus == "success") {
           $('#portfolio_main_image').before(data).remove();
+          
 
           $('ul#portfolio_images li a.selected').removeClass('selected').addClass('pale');
 
