@@ -25,3 +25,12 @@ config.log_level = :info
 # instead of the default file system for resources and images
 # Make sure to your bucket info is correct in amazon_s3.yml
 Refinery.s3_backend = false
+
+ActionMailer::Base.smtp_settings = {
+  :address        => "mail.stips.se",
+  :port           => 465,
+  :domain         => "stips.se",
+  :user_name      => "no-reply@stips.se",
+  :password       => "stips01",
+  :authentication => :plain
+}

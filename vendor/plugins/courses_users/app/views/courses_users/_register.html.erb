@@ -1,5 +1,3 @@
-<%# if logged_in? %>
-<%# if !course.registered?(current_user) %>
 <% form_tag register_courses_users_path(:course_id => course.id) do -%>
   <table>
     <tr>
@@ -19,9 +17,3 @@
     </tr>
   </table>
 <% end -%>
-<%# else -%>
-<%#*<strong>You are registered to this course</strong>%>
-<%# end -%>
-<%# else -%>
-<%#*<strong>Please login to register in this course</strong>%>
-<%# end -%>

@@ -18,4 +18,8 @@ class Course < ActiveRecord::Base
     fee == 0
   end
 
+  def negotiable?
+    negotiable
+  end
+
 end

@@ -16,9 +16,9 @@
     <tr>
       <td><h3>Course Fee</h3></td>
       <% if @course.negotiable%>
-      <td>: On request. Please <a href="/contact" title="Contact">contact</a> the course administrator</td>
+        <td>: On request. Please <a href="/contact" title="Contact">contact</a> the course administrator</td>
       <% else -%>
-      <td>: <%= @course.fee %> SEK</td>
+        <td>: <%= @course.fee %> SEK</td>
       <% end -%>
     </tr>
     <tr>
@@ -29,16 +29,19 @@
     </tr>
   </table>
 
-  <div style="padding-left: 3px;">
-    <p><h3>Register to this course</h3></p>
-  <% if @course.max_limit > @course.courses_users.confirmed.count  %>
-    <%= render(:partial => "/courses_users/register", :locals => {:course => @course}) %>
-  <% else -%>
-    <p>
-      <strong style="color: #CC2027;">Sorry! There is no open place in this course.</strong>
-    </p>
+  <% if !@course.negotiable? %>
+
+    <div style="padding-left: 3px;">
+      <p><h3>Register to this course</h3></p>
+    <% if @course.max_limit > @course.courses_users.confirmed.count  %>
+      <%= render(:partial => "/courses_users/register", :locals => {:course => @course}) %>
+    <% else -%>
+      <p>
+        <strong style="color: #CC2027;">Sorry! There is no open place in this course.</strong>
+      </p>
+    <% end -%>
+    </div>
   <% end -%>
-  </div>
 
   <br/>
   <p>
