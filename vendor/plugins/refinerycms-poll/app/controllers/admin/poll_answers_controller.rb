@@ -25,6 +25,11 @@ class Admin::PollAnswersController < Admin::BaseController
     end
   end
 
+  def destroy
+    flash.now[:notice] = t('refinery.crudify.destroyed', :what => "#{@poll_answer.title}") if @poll_answer.destroy
+    redirect_to admin_poll_poll_answers_url(params[:poll_id])
+  end
+
   def find_poll
     @poll = Poll.find(params[:poll_id])
   end
