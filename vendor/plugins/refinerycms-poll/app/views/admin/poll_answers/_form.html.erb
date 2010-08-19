@@ -1,10 +1,24 @@
 <%= error_messages_for :poll_answer -%>
 <% form_for [:admin, @poll, @poll_answer] do |f| -%>
-  
+
   <div class='field'>
     <%= f.label :title -%>
     <%= f.text_field :title, :class => 'larger' -%>
   </div>
-  
-  <%= render :partial => "/shared/admin/form_actions", :locals => {:f => f, :continue_editing => false} %>
+
+
+  <div class='form-actions<%= ' form-actions-dialog' if from_dialog? %>'>
+    <div class='form-actions-left'>
+      <%= submit_tag "Save",
+        :id => "submit_button",
+        :class => "wymupdate button" %>
+
+      <%= link_to("Cancel",
+        admin_poll_poll_answers_url(:poll_id => params[:poll_id]),
+        :title => "cancel to loose changes",
+        :id => "cancel_button",
+        :class => "close_dialog button") %>
+    </div>
+  </div>
+
 <% end -%>
