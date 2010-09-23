@@ -19,7 +19,7 @@ class Course < ActiveRecord::Base
   end
 
   def negotiable?
-    negotiable
+    negotiable || false
   end
 
 end
