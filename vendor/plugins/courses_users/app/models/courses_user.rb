@@ -4,6 +4,8 @@ class CoursesUser < ActiveRecord::Base
   belongs_to :course
   belongs_to :user
 
+  named_scope :confirmed, :conditions => {:status => "confirmed"}
+
   aasm_column :status
   aasm_initial_state :pending
 
