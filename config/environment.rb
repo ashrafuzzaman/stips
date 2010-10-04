@@ -11,7 +11,7 @@ require File.expand_path('../application', __FILE__)
 
 ActionMailer::Base.smtp_settings = {
   :address        => "mail.stips.se",
-  :port           => "465",
+  :port           => "26",
   :authentication => :plain,
   :user_name      => "no-reply",
   :password       => "stips01",
