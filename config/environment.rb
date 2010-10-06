@@ -13,7 +13,7 @@ ActionMailer::Base.smtp_settings = {
   :address        => "mail.stips.se",
   :port           => "26",
   :authentication => :plain,
-  :user_name      => "no-reply",
+  :user_name      => "no-reply@stips.se",
   :password       => "stips01",
   :domain         => "stips.se"
 }
